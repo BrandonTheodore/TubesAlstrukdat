@@ -18,7 +18,7 @@ typedef struct
 
 /* State Mesin Kata */
 extern boolean EndWord;
-extern Word CurrentWord;
+extern Word currentWord;
 
 void IgnoreBlanks();
 /* Mengabaikan satu atau beberapa BLANK
@@ -30,6 +30,9 @@ void STARTWORD();
    F.S. : EndWord = true, dan currentChar = MARK;
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
+
+//startword modifikasi untuk dapat menambahkan (menyimpan) karakter ke currentWord
+void STARTWORD2();
 
 void ADVWORD();
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
@@ -45,5 +48,7 @@ void CopyWord();
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
+
+void CopyLine();
 
 #endif

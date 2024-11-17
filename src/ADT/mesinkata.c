@@ -78,3 +78,20 @@ void CopyWord()
 boolean isEndWord() {
     return endWord;
 }
+
+void STARTWORD2() {
+    START(); 
+    IgnoreBlanks();  
+    
+    currentWord.Length = 0;
+    
+    while (currentChar != MARK && currentChar != '\n') {
+        if (currentWord.Length < NMax) {
+            currentWord.TabWord[currentWord.Length] = currentChar;
+            currentWord.Length++;
+        }
+        ADV();  
+    }
+    
+    endWord = (currentChar == MARK);
+}
