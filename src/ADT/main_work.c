@@ -4,7 +4,6 @@
 int main() {
     JobList jobList;
     initializeJobs(&jobList);
-    printf("ppppp");
     
     // Tampilkan saldo awal
     printf("Saldo awal Anda:..... rupiah\n"); //... memanggil nilai saldo yang tersave
