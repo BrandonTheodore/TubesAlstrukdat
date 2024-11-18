@@ -1,6 +1,4 @@
-#include "boolean.h"
 #include "saldo.h"
-#include "work.h"
 
 void updateSaldoInFile(int userId, int additionalAmount) {
     FILE *file;

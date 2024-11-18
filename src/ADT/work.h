@@ -7,6 +7,7 @@
 #include "list.h"
 #include "mesinkata.h"
 #include "mesinkarakter.h"
+#include "saldo.h"
 
 typedef struct {
     Word name;

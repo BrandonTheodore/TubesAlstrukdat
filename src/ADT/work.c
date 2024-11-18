@@ -1,5 +1,4 @@
- #include "work.h"
-  #include "saldo.h"
+#include "work.h"
 
 char katakecil(char c) {
     if (c >= 'A' && c <= 'Z') {
@@ -109,8 +108,4 @@ void doWork(Job *selectedJob) {
     printf("Pekerjaan selesai, +%d rupiah telah ditambahkan ke akun Anda.\n", 
            selectedJob->income);
     
-    updateSaldoInFile(1, selectedJob->income);
-    
-    int currentSaldo = getCurrentSaldo(1);
-    printf("Saldo Anda sekarang: %d rupiah\n", currentSaldo);
 }
