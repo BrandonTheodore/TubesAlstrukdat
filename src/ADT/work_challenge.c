@@ -1,4 +1,4 @@
-#include "work_challange.h"
+#include "work_challenge.h"
 
 void displayWorkChallenge() {
     printf(">> WORK CHALLENGE\n");
