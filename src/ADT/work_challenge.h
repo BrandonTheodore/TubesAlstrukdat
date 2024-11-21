@@ -8,6 +8,7 @@
 #include "mesinkarakter.h"
 #include "tebakangka.h"
 #include "wordl3.h"
+#include "quantum.h"
 
 // Konstanta
 #define TA_COST 200
