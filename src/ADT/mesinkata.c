@@ -79,6 +79,21 @@ boolean isEndWord() {
     return endWord;
 }
 
+boolean isEqual(char x[100], char y[100]){
+    boolean cek = true;
+    if(len(y) != len(y)){
+        cek = false;
+        return cek;
+    } else {
+        for(int i = 0; x[i] != '\0'; i++){
+            if(x[i] != y[i]){
+                cek = false;
+            }
+        }
+        return cek;
+    }
+}
+
 void STARTWORD2() {
     START(); 
     IgnoreBlanks();  
@@ -94,4 +109,12 @@ void STARTWORD2() {
     }
     
     endWord = (currentChar == MARK);
+}
+
+int len(char x[100]){
+    int i = 0;
+    while(x[i] != '\0'){
+        i++;
+    }
+    return i;
 }

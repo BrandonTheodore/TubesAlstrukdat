@@ -51,4 +51,8 @@ void CopyWord();
 
 void CopyLine();
 
+int len(char x[100]);
+
+boolean isEqual(char x[100], char y[100]);
+
 #endif
