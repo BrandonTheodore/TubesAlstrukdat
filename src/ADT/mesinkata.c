@@ -118,3 +118,13 @@ int len(char x[100]){
     }
     return i;
 }
+int wordToInt(Word word) {
+    int result = 0;
+    for (int i = 0; i < word.Length; i++) {
+        if (word.TabWord[i] >= '0' && word.TabWord[i] <= '9') {
+            result = result * 10 + (word.TabWord[i] - '0');
+        }
+    }
+    return result;
+}
+

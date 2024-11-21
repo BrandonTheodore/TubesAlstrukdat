@@ -49,6 +49,9 @@ void CopyWord();
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
 
+int wordToInt();
+          
+boolean isEndWord();
 void CopyLine();
 
 int len(char x[100]);
