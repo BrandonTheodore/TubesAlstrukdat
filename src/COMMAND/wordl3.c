@@ -31,11 +31,6 @@ boolean isValidWord(Word guess) {
 void readGuess(Word *guess) {
   STARTWORD2();
   *guess = currentWord;
-
-    for (int i = 0; i < currentWord.Length; i++) {
-        currentWord.TabWord[i] = '\0';
-    }
-    currentWord.Length = 0;
 }
 
 void compareGuess(Word guess, Word secretWord, Word *result) {
@@ -81,7 +76,13 @@ void displayPreviousGuesses(Word results[], int attempts) {
   }
 }
 
-void playWordle() { 
+void playWordle() {
+    int currentSaldo = getCurrentSaldo(1); // mengambil saldo dari array untuk pengguna id 1 (sesuiakan dengan fungsi di savenya)
+    if (currentSaldo < W_COST) {
+        printf("Maaf, saldo Anda tidak cukup untuk bermain. Biaya permainan: %d rupiah\n", W_COST);
+        return;
+    }
+    
     srand(time(NULL));
 
     // Pilih kata rahasia secara acak dari daftar kata yang sudah ditentukan
@@ -109,7 +110,6 @@ void playWordle() {
     printf("\n");
 
     while (attempts < MAX_ATTEMPTS_W && !win) {
-        int a = 0;
         Word guess;
         printf("Masukan kata tebakan Anda: ");
         readGuess(&guess);
@@ -138,7 +138,6 @@ void playWordle() {
             win = true;
             printf("Selamat, Anda menang!\n");
             printf("+1500 rupiah telah ditambahkan ke akun Anda.\n");
-            global_Saldo += 1500;
         }
     }
 
@@ -147,6 +146,7 @@ void playWordle() {
         printf("Kata yang benar adalah: ");
         for (int i = 0; i < secretWord.Length; i++) {
             printf("%c", secretWord.TabWord[i]);
+            updateSaldoInFile(1, 1500);//masukin saldo
         }
         printf("\n");
     }

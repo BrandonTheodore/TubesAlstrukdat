@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include "saldo.h"
 #include "work_challenge.h"
 
 int main() {
     // Tampilkan saldo awal
-    //.... memanggil nilai saldo yang tersave
+    printf("\nSaldo Anda: %d rupiah\n\n", getCurrentSaldo(1));
     
     // Tampilkan dan jalankan challenge
     selectChallenge();
