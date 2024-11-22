@@ -22,7 +22,7 @@ int price;
 typedef struct {
     User TotUs[MAX_LEN];
     Barang TotBar[MAX_LEN];
-} Total;
+} List;
 
 
 void LOAD();
