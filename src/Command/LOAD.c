@@ -12,4 +12,9 @@ boolean load;
 void LOAD(char txt[50]){
     load = true;
     file = fopen(txt, "r");
+    if(file == NULL){
+        main();
+    } else {
+        printf("File berhasil dibaca!")
+    }
 }

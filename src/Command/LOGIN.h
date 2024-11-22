@@ -3,14 +3,14 @@
 
 #include "boolean.h"
 
-#define CAPACITY 50
+#define MAX_LEN 50
 
 extern boolean login;
 
-typedef struct
-{
-    char user[CAPACITY];
-    char pass[CAPACITY];
-} UPass;
+typedef struct {
+char name[MAX_LEN];
+char password[MAX_LEN];
+int money;
+} User;
 
 #endif

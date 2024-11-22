@@ -13,6 +13,6 @@ void MULAI(){
         printf("Selamat datang di PURRMART!\nSilakan masukan perintah anda!\n>>>");
         STARTWORD2();
     } else if (!load){
-        printf("Oke");
+        LOAD("default.txt");
     }
 }

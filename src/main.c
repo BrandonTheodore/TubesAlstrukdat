@@ -7,14 +7,6 @@
 
 char input[5];
 
-void start(){
-    printf("Selamat datang PURRMART! Silakan masukan perintah anda.\n>>> ");
-    scanf("%s", input);
-    if(input == "EXIT"){
-        printf("Sampai Jumpa!");
-    }
-}
-
 int main(){
     STARTWORD2();
     char command[50];
