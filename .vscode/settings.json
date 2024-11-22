@@ -55,14 +55,5 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-<<<<<<< Updated upstream
-=======
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "files.associations": {
-    "work_challenge.h": "c",
-    "tebakangka.h": "c",
-    "saldo.h": "c",
-    "mesinkarakter.h": "c"
-  }
->>>>>>> Stashed changes
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

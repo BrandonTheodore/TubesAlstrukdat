@@ -13,6 +13,7 @@
 
 #define MAX_QUANTUM_ATTEMPTS 9
 #define QUANTUM_WORDS 4
+#define NMax 50 
 #define QUANTUM_COST 1000
 
 void playQuantumWordle();
