@@ -51,5 +51,4 @@ void playGuessingGame() {
     }
 
     printf("\nMaaf, kesempatan anda habis. Angka yang benar adalah %d.\n", targetNumber);
-    printf("Saldo akhir: %d\n", global_Saldo);
 }
