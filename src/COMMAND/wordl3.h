@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "boolean.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "list.h"
-#include "saldo.h"
+#include "../ADT/boolean.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
+#include "../ADT/list.h"
+#include "work_challenge.h"
 
 #ifndef WORDL3_H
 #define WORDL3_H
