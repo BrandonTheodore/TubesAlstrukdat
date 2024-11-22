@@ -1,5 +1,7 @@
 #include "work_challenge.h"
 
+int global_Saldo =0;
+
 void displayWorkChallenge() {
     printf(">> WORK CHALLENGE\n");
     printf("Daftar challenge yang tersedia:\n");
@@ -16,15 +18,23 @@ void selectChallenge() {
     // Baca input menggunakan mesin kata
     STARTWORD2();
     choice = wordToInt(currentWord);
+
+    for (int i = 0; i < currentWord.Length; i++) {
+        currentWord.TabWord[i] = '\0';
+    }
+    currentWord.Length = 0;
     
     switch(choice) {
         case 1:
+            global_Saldo -=TA_COST;
             playGuessingGame();
             break;
         case 2:
+            global_Saldo -=W_COST;
             playWordle();
             break;
         case 3:
+            global_Saldo -=QUANTUM_COST;
             playQuantumWordle();
             break;
         default:

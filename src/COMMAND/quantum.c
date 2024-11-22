@@ -1,13 +1,6 @@
 #include "quantum.h"
 
-
 void playQuantumWordle() {
-    int currentSaldo = getCurrentSaldo(1);
-    if (currentSaldo < QUANTUM_COST) {
-        printf("Maaf, saldo Anda tidak cukup untuk bermain Quantum Wordle. Biaya permainan: %d rupiah\n", QUANTUM_COST);
-        return;
-    }
-    
     srand(time(NULL));
 
     const char* secretWordOptions[] = {
@@ -24,7 +17,6 @@ void playQuantumWordle() {
             unique = true;
             randomIndex = rand() % numSecretWords;
             
-
             for (int j = 0; j < i; j++) {
                 if (secretWords[j].TabWord[0] == secretWordOptions[randomIndex][0] &&
                     secretWords[j].Length == 5) {
@@ -47,7 +39,6 @@ void playQuantumWordle() {
 
     printf("\nWELCOME TO QUANTUM W0RDL3, YOU HAVE 9 CHANCES TO ANSWER 4 DIFFERENT WORDS!\n\n");
     
-
     for (int i = 0; i < MAX_QUANTUM_ATTEMPTS; i++) {
         printf("_ _ _ _ _   _ _ _ _ _   _ _ _ _ _   _ _ _ _ _\n");
     }
@@ -55,11 +46,15 @@ void playQuantumWordle() {
 
     while (attempts < MAX_QUANTUM_ATTEMPTS && !allWins) {
         Word guesses[QUANTUM_WORDS];
+        boolean validInput = true;
         
-        printf("Masukan 4 kata tebakan Anda: ");
-        for (int i = 0; i < QUANTUM_WORDS; i++) {
-            readGuess(&guesses[i]);
-            
+        do {
+            validInput = true;
+    
+            for (int i = 0; i < QUANTUM_WORDS; i++) {
+                printf("Masukkan kata ke-%d: ", i+1);
+                readGuess(&guesses[i]);
+        
             for (int j = 0; j < guesses[i].Length; j++) {
                 if (guesses[i].TabWord[j] >= 'a' && guesses[i].TabWord[j] <= 'z') {
                     guesses[i].TabWord[j] = guesses[i].TabWord[j] - 'a' + 'A';
@@ -68,10 +63,12 @@ void playQuantumWordle() {
 
             if (!isValidWord(guesses[i])) {
                 printf("Kata ke-%d tidak valid! Harus terdiri dari 5 huruf.\n", i+1);
-                attempts--;
+                validInput = false;
                 break;
             }
         }
+    } while (!validInput);
+
 
         for (int i = 0; i < QUANTUM_WORDS; i++) {
             if (!wins[i]) {
@@ -117,7 +114,7 @@ void playQuantumWordle() {
     if (allWins) {
         printf("Selamat, Anda menang! Anda berhasil menebak semua kata!\n");
         printf("+3000 rupiah telah ditambahkan ke akun Anda.\n");
-        updateSaldoInFile(1, 3000);
+        global_Saldo += 3000;
     } else {
         printf("Boo! Anda kalah.\n");
         printf("Kata yang benar adalah:\n");
