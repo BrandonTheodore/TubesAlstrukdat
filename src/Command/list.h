@@ -5,6 +5,7 @@
 #ifndef ADTList1
 #define ADTList1
 
+#include "LOAD.h"
 #include "boolean.h"
 
 /* Kamus Umum */

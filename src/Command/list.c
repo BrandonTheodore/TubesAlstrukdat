@@ -134,3 +134,13 @@ List Concat(List L1, List L2) {
 
     return L;
 }
+
+//fungsi untuk mencari username pada list
+int findUsername(char nama[MAX_LEN], List data) {
+    for(int i = 0; i < MAX_LEN; i++) {
+        if(isEqual(data.TotUs[i].name, nama)) {
+            return i; 
+        }
+    }
+    return -1;  
+}
