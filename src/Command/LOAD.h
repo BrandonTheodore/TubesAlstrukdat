@@ -6,6 +6,7 @@
 extern boolean load;
 
 #define MAX_LEN 50
+#define NIL -1
 
 typedef struct {
 char name[MAX_LEN];

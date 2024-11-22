@@ -4,7 +4,7 @@
 #include <math.h>
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "LOAD.h"
+#include "START.h"
 
 boolean load;
 

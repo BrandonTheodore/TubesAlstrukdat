@@ -1,12 +1,19 @@
-#include "LOGIN.h"
+#include "LOGOUT.h"
+char name[50];
+char password[50];
+int money;
+boolean login;
+
 void LOGOUT(){
-    UPass upass;
     if(login){
-        int i = 0;
-        while(upass.user[i] != '\0'){
-            (&upass)->user[i] = '\0';
-            i++;
+        for(int i = 0; name[i] != '\0'; i++){
+            name[i] = '\0';
         }
+        for(int i = 0; password[i] != '\0'; i++){
+            password[i] = '\0';
+        }
+        money = NIL;
+        login = false;
     } else {
         printf("Kamu belum melakukan login, silakan login terlebih dahulu!");
         MULAI();

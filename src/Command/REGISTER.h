@@ -2,6 +2,7 @@
 #define REGISTER_H
 
 #include "boolean.h"
+#include "LOAD.h"
 
 void REGISTER();
 

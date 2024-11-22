@@ -2,15 +2,9 @@
 #define LOGIN_H
 
 #include "boolean.h"
-
-#define MAX_LEN 50
-
+#include "LOAD.h"
+#include "START.h"
 extern boolean login;
-
-typedef struct {
-char name[MAX_LEN];
-char password[MAX_LEN];
-int money;
-} User;
+extern char name[50];
 
 #endif

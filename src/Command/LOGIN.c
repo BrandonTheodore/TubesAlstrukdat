@@ -7,34 +7,50 @@
 #include "LOGIN.h"
 
 boolean login;
+char name[50];
 
 void LOGIN(){
-    UPass upass;
+    Total total;
+    char user[50];
     printf("Username: ");
     STARTWORD2();
     int i = 0;
-    boolean cek = true;
     while(currentWord.TabWord[i] != '\0'){
-        (&upass)->user[i] = currentWord.TabWord[i];
+        user[i] = currentWord.TabWord[i];
         (&currentWord)->TabWord[i] = '\0';
         i++;
     }
-    (&upass)->user[i] = '\0';
+    user[i] = '\0';
     printf("Password: ");
     STARTWORD2();
     char pass[50];
     int j = 0;
     while(currentWord.TabWord[j] != '\0'){
-        (&upass)->pass[j] = currentWord.TabWord[j];
+        pass[j] = currentWord.TabWord[j];
         (&currentWord)->TabWord[j] = '\0';
         j++;
     }
-    (&upass)->pass[j] = '\0'; 
+    pass[j] = '\0';
 
-    login = true;
+    for(int i = 0; i < 50; i++){
+        if(isEqual(user, total.TotUs[i].name)){
+            if(isEqual(pass, total.TotUs[i].password)){
+                printf("Login Berhasil!");
+                login = true;
+                int j = 0;
+                while(user[j] != ' ' && user[i] != '\0'){
+                    name[j] = user[j];
+                    j++;
+                }
+                name[j] = '\0';
+            } else {
+                printf("Username/Password salah!");
+                MULAI();
+            }
+        } else {
+            printf("Username/Password salah!");
+            MULAI();
+        }
+    }
     
-}
-
-int main(){
-    LOGIN();
 }
