@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "list.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "saldo.h"
+#include "../ADT/boolean.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
+#include "../ADT/list.h"
 
 typedef struct {
     Word name;
@@ -19,6 +19,9 @@ typedef struct {
     Job jobs[5];
     int count;
 } JobList;
+
+//variabel global saldo untuk work
+extern int global_Saldo_work;
 
 // Inisialisasi daftar pekerjaan
 void initializeJobs(JobList *jobList);

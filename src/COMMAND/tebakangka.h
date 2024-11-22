@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "saldo.h"
+#include "../ADT/boolean.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
+#include "work_challenge.h"
 
 #ifndef TEBAKANGKA_H
 #define TEBAKANGKA_H
