@@ -1,11 +1,34 @@
 #ifndef STORE_REQUEST_H
 #define STORE_REQUEST_H
 
+#include "custom.h"
+#include "ADTList1.h"
+#include "mesinkarakter.h"
+#include "mesinkata.h"
 #include "queue.h"
-#include "list.h"
-#include "barang.h"
+#include "boolean.h"
 
-// Fungsi untuk memproses permintaan barang dari user
-void store_request(List *itemList, Queue *requestQueue, char *itemName);
+/* ********** CONSTANTS ********** */
+#define MAX_STORE_ITEMS 100
+
+/* ********** STRUCTURES ********** */
+typedef struct {
+    List storeItems;         // Daftar barang di toko (menggunakan ADT List)
+    Queue requestedItems;    // Antrian barang yang diminta (menggunakan ADT Queue)
+} Store;
+
+/* ********** FUNCTION DECLARATIONS ********** */
+
+/* Inisialisasi Store */
+void InitStore(Store *S);
+
+/* Menangani command STORE REQUEST */
+void StoreRequest(Store *S);
+
+/* Mengecek apakah barang dengan nama tertentu sudah ada di toko */
+boolean IsItemInStore(Store S, char itemName[MAX_LEN]);
+
+/* Mengecek apakah barang dengan nama tertentu sudah ada di antrian */
+boolean IsItemInQueue(Store S, char itemName[MAX_LEN]);
 
 #endif
