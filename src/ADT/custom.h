@@ -20,15 +20,4 @@ char name[MAX_LEN];
 int price;
 } Barang;
 
-typedef struct {
-char name[MAX_LEN][MAX_LEN];
-char password[MAX_LEN][MAX_LEN];
-int money;
-} AllUser;
-
-typedef struct {
-char name[MAX_LEN][MAX_LEN];
-int price[MAX_LEN];
-} AllBarang;
-
 #endif

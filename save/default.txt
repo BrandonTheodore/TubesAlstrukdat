@@ -2,6 +2,7 @@
 10 AK47
 20 Lalabu
 20 Ayam_Goreng_Crisbar
-2
+3
+100 adm 123
 100 admin alstrukdatkeren
 25 praktikan kerenbangetkak

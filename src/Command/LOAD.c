@@ -23,6 +23,7 @@ void LOAD(char txt[50]){
         i++;
     }
     path[i] = '\0';
+    printf("%s\n", path);
     file = fopen(path, "r");
     if(file == NULL){
         printf("File gagal dibaca!\n");
@@ -40,7 +41,7 @@ void LOAD(char txt[50]){
         }
         int line1;
         fscanf(file, "%d", &line1);
-        printf("%d", line1);
+        printf("%d\n", line1);
         for(int i = 0; i < line1; i++){
             int money;
             char name[50];
