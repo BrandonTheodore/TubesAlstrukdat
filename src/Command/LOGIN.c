@@ -2,15 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "../ADT/mesinkata.c"
-#include "../ADT/mesinkarakter.c"
 #include "LOGIN.h"
 
-boolean login;
-char name[50];
+List L;
+User user;
 
 void LOGIN(){
-    Total total;
     char user[50];
     printf("Username: ");
     STARTWORD2();
@@ -32,9 +29,9 @@ void LOGIN(){
     }
     pass[j] = '\0';
 
-    for(int i = 0; i < 50; i++){
-        if(isEqual(user, total.TotUs[i].name)){
-            if(isEqual(pass, total.TotUs[i].password)){
+    for(int i = 0; i < L.Neff; i++){
+        if(isEqual(user, L.A[i].name)){
+            if(isEqual(pass, L.A[i].password)){
                 printf("Login Berhasil!");
                 login = true;
                 int j = 0;
@@ -42,14 +39,12 @@ void LOGIN(){
                     name[j] = user[j];
                     j++;
                 }
-                name[j] = '\0';
+            name[j] = '\0';
             } else {
-                printf("Username/Password salah!");
-                MULAI();
+            printf("Username/Password salah!");
             }
         } else {
             printf("Username/Password salah!");
-            MULAI();
         }
     }
     

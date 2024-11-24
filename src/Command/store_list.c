@@ -1,22 +1,15 @@
 #include "store_list.h"
 #include <stdio.h>
+ArrayDin AD;
 
-void store_list(List *itemList) {
-    int len = Length(*itemList);
-    
-    if (len == 0) {
+void store_list() {
+    if (AD.Neff == 0) {
         printf("TOKO KOSONG\n");
     } else {
-        int seen[MaxEl] = {0};  
         printf("List barang yang ada di toko:\n");
         
-        for (int i = FirstIdx(*itemList); i <= LastIdx(*itemList); i++) {
-            ElType item = Get(*itemList, i);
-            
-            if (!seen[item]) {
-                printf("- %d\n", item);  
-                seen[item] = 1;  
-            }
+        for (int i = 0; i < AD.Neff; i++) {
+            printf("%s\n", AD.A[i].name);            
         }
     }
 }

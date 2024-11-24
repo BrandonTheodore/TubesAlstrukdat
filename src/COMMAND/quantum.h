@@ -5,9 +5,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "boolean.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "list.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
 #include "saldo.h"
 #include "wordl3.h"
 

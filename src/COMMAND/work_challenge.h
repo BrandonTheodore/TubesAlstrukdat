@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "mesinkata.h"
-#include "mesinkarakter.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
 #include "tebakangka.h"
 #include "wordl3.h"
 #include "quantum.h"

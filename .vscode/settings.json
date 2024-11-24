@@ -55,4 +55,21 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "arraydin.h": "c",
+    "help.h": "c",
+    "start.h": "c",
+    "mesinkarakter.h": "c",
+    "login.h": "c",
+    "load.h": "c",
+    "stdlib.h": "c",
+    "mesinkata.h": "c",
+    "boolean.h": "c",
+    "math.h": "c",
+    "custom.h": "c",
+    "stdio.h": "c",
+    "start.c": "cpp"
+  },
+  "C_Cpp.dimInactiveRegions": false,
 }

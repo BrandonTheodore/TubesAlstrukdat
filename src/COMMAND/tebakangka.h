@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "mesinkata.h"
-#include "mesinkarakter.h"
+#include "../ADT/mesinkarakter.h"
+#include "../ADT/mesinkata.h"
 #include "saldo.h"
 
 #ifndef TEBAKANGKA_H

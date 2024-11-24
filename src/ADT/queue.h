@@ -7,7 +7,7 @@
 #include "boolean.h"
 
 #define IDX_UNDEF -1
-#define CAPACITY 100
+#define CAPACITY 50
 
 /* Definisi elemen dan address */
 typedef int ElType;

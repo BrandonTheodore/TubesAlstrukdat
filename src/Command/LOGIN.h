@@ -2,9 +2,13 @@
 #define LOGIN_H
 
 #include "boolean.h"
-#include "LOAD.h"
-#include "START.h"
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
+#include "../ADT/Custom.h"
+#include "../ADT/list.h"
+
 extern boolean login;
-extern char name[50];
+
+void LOGIN();
 
 #endif

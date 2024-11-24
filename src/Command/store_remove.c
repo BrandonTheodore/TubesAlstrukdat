@@ -1,24 +1,33 @@
 #include "store_remove.h"
 #include <stdio.h>
 
-void store_remove(List *storeInventory) {
-    Word itemToRemove;
+ArrayDin AD;
+
+void store_remove() {
     boolean found = false;
 
     printf("Nama barang yang akan dihapus: ");
-    STARTWORD(); // Membaca input nama barang
-    itemToRemove = currentWord;
+    STARTWORD2();
+    char command[50];
+    int i = 0;
+    while(currentWord.TabWord[i] != '\0'){
+        command[i] = currentWord.TabWord[i];
+        (&currentWord)->TabWord[i] = '\0';
+        i++;
+    }
+    command[i] = '\0';
+    (&currentWord)->TabWord[i] = '\0';
 
-    for (IdxType i = FirstIdx(*storeInventory); i <= LastIdx(*storeInventory); i++) {
-        if (isEqual(Get(*storeInventory, i).name, itemToRemove.TabWord)) {
-            DeleteAt(storeInventory, i);
-            printf("%s telah berhasil dihapus.\n", itemToRemove.TabWord);
+    for (int i = 0; i < AD.Neff ; i++) {
+        if (isEqual(command, AD.A[i].name)){
+            DeleteAtDin(&AD, i);
+            printf("%s telah berhasil dihapus.\n", command);
             found = true;
             break;
         }
     }
 
     if (!found) {
-        printf("Toko tidak menjual %s\n", itemToRemove.TabWord);
+        printf("Toko tidak menjual %s\n", command);
     }
 }
