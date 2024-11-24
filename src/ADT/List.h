@@ -16,7 +16,7 @@
 
 typedef struct {
 	User A[MaxEl];
-	int Neff;  /* Memori tempat penyimpanan elemen (container) */
+	int Neff;  
 } List;
 
 extern List L;

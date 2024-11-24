@@ -13,6 +13,10 @@
 // Konstanta
 #define TA_COST 200
 #define W_COST 500
+#define QUANTUM_COST 1000
+
+// saldo global
+extern int global_Saldo; 
 
 // menampilkan daftar permainan
 void displayWorkChallenge();

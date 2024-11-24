@@ -9,7 +9,7 @@
 #ifndef WORDL3_H
 #define WORDL3_H
 
-#define MAX_ATTEMPTS_W 5
+#define MAX_ATTEMPTS_W 6
 #define NMax 50 
 #define W_COST 500
 
