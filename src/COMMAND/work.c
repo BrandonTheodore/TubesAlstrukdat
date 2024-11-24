@@ -112,3 +112,30 @@ void doWork(Job *selectedJob) {
            selectedJob->income);
     
 }
+void main_work(){
+    JobList jobList;
+    initializeJobs(&jobList);
+    
+    // Tampilkan saldo awal
+    
+    displayJobs(jobList);
+
+    printf("\nMasukkan pekerjaan yang dipilih: ");
+    STARTWORD2(); 
+    
+    Word inputJob = currentWord;
+    
+    for (int i = 0; i < currentWord.Length; i++) {
+        currentWord.TabWord[i] = '\0';
+    }
+    currentWord.Length = 0;
+
+    Job* selectedJob = findJob(&jobList, inputJob);
+    
+    if (selectedJob != NULL) {
+        doWork(selectedJob);
+    } else {
+        printf("Pekerjaan tidak ditemukan!\n");
+    }
+     
+}

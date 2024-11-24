@@ -7,9 +7,25 @@
 boolean start;
 boolean login;
 boolean load;
+User user;
 
 void MULAI(){
     if(!start && !login){
+        printf("\n");
+        printf(" []=] __        _____ _     ____ ___  __  __ _____   _____ ___  \n");
+        printf("      \\ \\      / /___| |   / ___/ _ \\|  \\/  | ____|  |_   _/ _ \\ \n");
+        printf("       \\ \\ /\\ / /    | |  | |  | | | | |\\/| |  _|      | || | | |\n");
+        printf("        \\ V  V /     | |__| |__| |_| | |  | | |___     | || |_| |\n");
+        printf("         \\_/\\_/      |_____\\____\\___/|_|  |_|_____|    |_| \\___/ \n");
+        printf("\n");
+        printf("                    ____  _   _ ____  ____  __  __    _    ____ _____ \n");
+        printf("                   |  _ \\| | | |  _ \\|  _ \\|  \\/  |  / \\  |  _ \\_   _|\n");
+        printf("                   | |_) | | | | |_) | |_) | |\\/  | / _ \\ | |_) || |  \n");
+        printf("                   |  __/| |_| |  _ <|  _ <| |  | |/ ___ \\|  _ < | |  \n");
+        printf("                   |_|    \\___/|_| \\_\\_| \\_\\_|  |_/_/   \\_\\_| \\_\\|_|  \n");
+        printf("----------------------------------------------------------------------------------------------\n");
+        printf("----------------------------------------------------------------------------------------------\n");
+        printf("\n");
         printf("1. START\n");
         printf("2. LOAD\n");
         printf("3. QUIT\n");
@@ -103,7 +119,36 @@ void MULAI(){
             i++;
         }
         command[i] = '\0';
-        if(isEqual(command, "SAVE")){
+
+        if (isEqual(command, "WORK")) {
+            main_work();
+            user.money = user.money + global_Saldo_work;
+        } 
+        else if(isEqual(command, "WORK CHALLENGE")){
+            selectChallenge();
+            user.money = user.money + global_Saldo;
+        } 
+        else if(isEqual(command, "STORE LIST")){
+            STORE_LIST();
+        } 
+        else if(isEqual(command, "STORE REQUEST")){
+            STORE_REQUEST();
+        } 
+        else if(isEqual(command, "STORE SUPPLY")){
+            STORE_SUPPLY();
+        } 
+        else if(isEqual(command, "STORE REMOVE")){
+            STORE_REMOVE();
+        } 
+        else if(isEqual(command, "LOGOUT")){
+            start = false;
+            login = false;
+            MULAI();
+        } 
+        else if(isEqual(command, "HELP")){
+            HELP(start, login);
+        }
+        else if(isEqual(command, "SAVE")){
             i++;
             int j = i;
             while(currentWord.TabWord[i] != '\0'){
@@ -113,7 +158,8 @@ void MULAI(){
             }
             txt[i-j] = '\0';
             SAVE(txt);
-        } else if(isEqual(command, "QUIT")){
+        } 
+        else if(isEqual(command, "QUIT")){
             printf("Aplikasi akan ditutup");
             exit(EXIT_SUCCESS);
         }

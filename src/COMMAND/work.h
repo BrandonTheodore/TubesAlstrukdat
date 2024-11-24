@@ -44,5 +44,7 @@ boolean isWordEqual(Word a, Word b);
 // Mengkonversi Word ke string untuk ditampilakn
 void wordToString(Word word, char* str);
 
+// Menjalankan perintah work
+void main_work();
 #endif
 
