@@ -74,4 +74,5 @@
     "time.h": "c"
   },
   "C_Cpp.dimInactiveRegions": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
