@@ -14,7 +14,7 @@ PURRMART adalah sebuah aplikasi yang dapat mensimulasikan aktivitas beli barang 
 
 ## Anggota Kelompok
 
-**Kelompok 6 Kelas K02 :**
+**Kelompok 6 Kelas K-02 :**
 
 | NIM          | Nama                       |
 | ---          | ---                        |
