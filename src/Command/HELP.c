@@ -1,14 +1,14 @@
-#include "HELP.h"
+#include "help.h"
 
-void HELP(boolean start, boolean login){
-    if(!start){
+void HELP(boolean start, boolean login) {
+    if (!start) {
         printf("===SELAMAT DATANG DI BANTUAN WELCOME MENU===\n");
         printf("1. START -> Untuk masuk sesi baru\n");
         printf("2. LOAD -> Untuk memulai sesi berdasarkan file konfigurasi\n");
         printf("3. QUIT -> Untuk keluar dari program\n");
         printf("============================================\n");
-    } else if(!login){
-        printf("===SELAMAT DATANG DI BANTUAN LOGIN MENU\n");
+    } else if (!login) {
+        printf("===SELAMAT DATANG DI BANTUAN LOGIN MENU===\n");
         printf("1. REGISTER -> Untuk mendaftarkan akun baru\n");
         printf("2. LOGIN -> Untuk masuk ke dalam akun yang sudah terdaftar dan memulai sesi\n");
         printf("3. QUIT -> Untuk keluar dari program\n");
@@ -26,4 +26,4 @@ void HELP(boolean start, boolean login){
         printf("9. QUIT -> Untuk keluar dari program\n");
         printf("============================================\n");
     }
-}   
+} 

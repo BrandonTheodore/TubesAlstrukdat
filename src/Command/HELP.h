@@ -3,6 +3,6 @@
 
 #include "boolean.h"
 
-void HELP();
+void HELP(boolean start, boolean login);
 
 #endif
