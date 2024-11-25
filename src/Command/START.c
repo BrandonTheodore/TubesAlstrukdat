@@ -172,6 +172,21 @@ void MULAI(){
             SAVE(txt);
         } 
         else if(isEqual(command, "QUIT")){
+            printf("Apakah kamu ingin menyimpan file?(Y/N)\n")
+            printf(">>> ")
+            STARTWORD2();
+            char command[50];
+            int i = 0;
+            while(currentWord.TabWord[i] != ' ' && currentWord.TabWord[i] != '\0'){
+                command[i] = currentWord.TabWord[i];
+                (&currentWord)->TabWord[i] = '\0';
+                i++;
+            }
+            command[i] = '\0';
+            (&currentWord)->TabWord[i] = '\0';
+            if(isEqual(command, "Y")){
+                SAVE("default.txt");
+            }
             printf("Aplikasi akan ditutup");
             exit(EXIT_SUCCESS);
         } else {
