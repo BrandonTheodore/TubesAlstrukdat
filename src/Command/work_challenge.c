@@ -1,9 +1,9 @@
 #include "work_challenge.h"
 
-int global_Saldo =0;
+User user;
 
 void displayWorkChallenge() {
-    printf(">> WORK CHALLENGE\n");
+    printf(">>> WORK CHALLENGE\n");
     printf("Daftar challenge yang tersedia:\n");
     printf("1. Tebak Angka (biaya main=%d)\n", TA_COST);
     printf("2. WORDL3 (biaya main=%d)\n",W_COST);
@@ -26,17 +26,29 @@ void selectChallenge() {
     
     switch(choice) {
         case 1:
-            global_Saldo -=TA_COST;
-            playGuessingGame();
-            break;
+            if(user.money >= TA_COST){
+                user.money -=TA_COST;
+                playGuessingGame();
+                break;
+            } else {
+                printf("Saldo tidak cukup!");
+            }
         case 2:
-            global_Saldo -=W_COST;
-            playWordle();
-            break;
+            if(user.money >= W_COST){
+                user.money -=W_COST;
+                playWordle();
+                break;
+            } else {
+                printf("Saldo tidak cukup!");
+            }
         case 3:
-            global_Saldo -=QUANTUM_COST;
-            playQuantumWordle();
-            break;
+            if(user.money >= QUANTUM_COST){
+                user.money -=QUANTUM_COST;
+                playQuantumWordle();
+                break;
+            } else {
+                printf("Saldo tidak cukup!");
+            }
         default:
             printf("Pilihan tidak valid.\n");
     }

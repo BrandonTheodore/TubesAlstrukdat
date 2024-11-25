@@ -6,6 +6,7 @@
 
 List L;
 User user;
+int IDX;
 
 void LOGIN(){
     char nama[50];
@@ -29,30 +30,29 @@ void LOGIN(){
     }
     pass[j] = '\0';
 
-    for(int i = 0; i < L.Neff; i++){
-        if(isEqual(nama, L.A[i].name)){
-            if(isEqual(pass, L.A[i].password)){
-                printf("Login Berhasil!");
-                login = true;
-                int j = 0;
-                while(L.A[i].name[j] != '\0'){
-                    user.name[j] = L.A[i].name[j];
-                    j++;
-                }
-                user.name[j] = '\0';
-
-                int k = 0;
-                while(L.A[i].password[k] != '\0'){
-                    user.password[k] = L.A[i].password[k];
-                    k++;
-                }
-                user.name[k] = '\0';
-            } else {
-            printf("Username/Password salah!");
+    boolean cek = Search(L, nama, &IDX);
+    if(cek){
+        if(isEqual(L.A[IDX].password, pass)){
+            printf("LOGIN BERHASIL!\n");
+            login = true;
+            int j = 0;
+            while(L.A[IDX].name[j] != '\0'){
+                user.name[j] = L.A[IDX].name[j];
+                j++;
             }
+            user.name[j] = '\0';
+
+            int k = 0;
+            while(L.A[IDX].password[k] != '\0'){
+                user.password[k] = L.A[IDX].password[k];
+                k++;
+            }
+            user.name[k] = '\0';
+            user.money = L.A[IDX].money;
         } else {
-            printf("Username/Password salah!");
+            printf("Password Salah!\n");
         }
+    } else {
+        printf("Username tidak ditemukan!\n");
     }
-    
 }

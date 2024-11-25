@@ -17,6 +17,7 @@
 #include "STORE_REMOVE.c"
 #include "LOGOUT.c"
 #include "../ADT/custom.h"
+#include "../ADT/queue.c"
 
 extern boolean start;
 

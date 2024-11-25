@@ -6,9 +6,9 @@
 #include <time.h>
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "tebakangka.h"
-#include "wordl3.h"
-#include "quantum.h"
+#include "tebakangka.c"
+#include "wordl3.c"
+#include "quantum.c"
 
 // Konstanta
 #define TA_COST 200

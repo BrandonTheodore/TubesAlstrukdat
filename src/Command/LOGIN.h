@@ -8,6 +8,7 @@
 #include "../ADT/list.h"
 
 extern boolean login;
+extern int IDX;
 
 void LOGIN();
 

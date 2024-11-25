@@ -84,6 +84,7 @@ void MULAI(){
             i++;
         }
         command[i] = '\0';
+        (&currentWord)->TabWord[i] = '\0';
         if(isEqual(command, "REGISTER")){
             REGISTER();
         } else if (isEqual(command, "LOGIN")) {
@@ -119,7 +120,7 @@ void MULAI(){
             i++;
         }
         command[i] = '\0';
-
+        (&currentWord)->TabWord[i] = '\0';
         if (isEqual(command, "WORK")) {
             i++;
             int j = i;
@@ -129,12 +130,20 @@ void MULAI(){
                 i++;
             }
             txt[i-j] = '\0';
+<<<<<<< Updated upstream
             if(txt[0] = '\0'){
                 main_work();
             } else if (isEqual(txt. "CHALLENGE")){
                 selectChallenge();
             } else {
                 printf("Command salah!\n")
+=======
+
+            if(txt[j] != '\0'){
+                selectChallenge();
+            } else {
+                main_work();
+>>>>>>> Stashed changes
             }
         } 
         else if(isEqual(command, "STORE")){
@@ -149,6 +158,7 @@ void MULAI(){
             if(isEqual(txt, "LIST")){
                 STORE_LIST();
             } else if(isEqual(txt, "REQUEST")){
+<<<<<<< Updated upstream
                 STORE_REQUEST();
             } else if(isEqual(txt, "SUPPLY")){
                 STORE_SUPPLY();
@@ -162,6 +172,17 @@ void MULAI(){
             LOGOUT();
         } 
         else if(isEqual(command, "HELP")){
+=======
+               STORE_REQUEST(); 
+            } else if(isEqual(txt, "SUPPLY")){
+                STORE_SUPPLY();
+            } else if(isEqual(txt, "REMOVE")){
+                STORE_REMOVE();
+            }
+        } else if(isEqual(command, "LOGOUT")){
+            LOGOUT();
+        } else if(isEqual(command, "HELP")){
+>>>>>>> Stashed changes
             HELP(start, login);
         }
         else if(isEqual(command, "SAVE")){
@@ -178,6 +199,8 @@ void MULAI(){
         else if(isEqual(command, "QUIT")){
             printf("Aplikasi akan ditutup");
             exit(EXIT_SUCCESS);
+        } else {
+            printf("Command tidak valid, silakan ulangi kembali!\n");
         }
     }
 

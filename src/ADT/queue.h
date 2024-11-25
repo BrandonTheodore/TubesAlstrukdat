@@ -18,6 +18,8 @@ typedef struct
     int idxTail;
 } Queue;
 
+extern Queue queue;
+
 /* ********* AKSES (Selektor) ********* */
 /* Jika q adalah Queue, maka akses elemen : */
 #define IDX_HEAD(q) (q).idxHead

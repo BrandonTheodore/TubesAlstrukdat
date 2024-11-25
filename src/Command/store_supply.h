@@ -1,10 +1,10 @@
 #ifndef STORE_SUPPLY_H
 #define STORE_SUPPLY_H
 
-#include "queue.h"
-#include "list.h"
+#include "../ADT/queue.h"
+#include "../ADT/dynamiclist.h"
 
 //Fungsi untuk menyuplai barang ke toko
-void store_supply(Queue *requestQueue, List *itemList);
+void STORE_SUPPLY();
 
 #endif

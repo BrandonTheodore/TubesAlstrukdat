@@ -1,6 +1,6 @@
 #include "wordl3.h"
-
-boolean isWordEqual(Word word1, Word word2) {
+User user;
+boolean isWordEqual3(Word word1, Word word2) {
   if (word1.Length != word2.Length) {
       return false;
   }
@@ -134,11 +134,11 @@ void playWordle() {
         displayPreviousGuesses(results, attempts);
         printf("\n");
 
-        if (isWordEqual(guess, secretWord)) {
+        if (isWordEqual3(guess, secretWord)) {
             win = true;
             printf("Selamat, Anda menang!\n");
             printf("+1500 rupiah telah ditambahkan ke akun Anda.\n");
-            global_Saldo += 1500;
+            user.money += 1500;
         }
     }
 

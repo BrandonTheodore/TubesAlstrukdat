@@ -1,6 +1,6 @@
 #include "work.h"
 
-int global_Saldo_work = 0;
+User user;
 
 char katakecil(char c) {
     if (c >= 'A' && c <= 'Z') {
@@ -107,7 +107,7 @@ void doWork(Job *selectedJob) {
     while ((clock() - start) / CLOCKS_PER_SEC < selectedJob->duration) {
     }
     
-    global_Saldo_work += selectedJob->income;
+    user.money += selectedJob->income;
     printf("Pekerjaan selesai, +%d rupiah telah ditambahkan ke akun Anda.\n", 
            selectedJob->income);
     

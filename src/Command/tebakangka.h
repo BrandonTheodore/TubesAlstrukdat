@@ -6,6 +6,7 @@
 #include "../ADT/boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
+#include "../ADT/Custom.h"
 #include "work_challenge.h"
 
 #ifndef TEBAKANGKA_H
