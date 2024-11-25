@@ -72,7 +72,6 @@ int main(){
         printf(">>> ");
         STARTWORD2();
         char command[50];
-        char txt[50];
         int i = 0;
         while(currentWord.TabWord[i] != ' ' && currentWord.TabWord[i] != '\0'){
             command[i] = currentWord.TabWord[i];

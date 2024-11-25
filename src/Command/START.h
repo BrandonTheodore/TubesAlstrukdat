@@ -3,7 +3,7 @@
 
 #include "../ADT/list.c"
 #include "../ADT/dynamiclist.c"
-#include "../ADT/custom.h"
+#include "../ADT/Custom.h"
 #include "LOAD.c"
 #include "LOGIN.c"
 #include "HELP.c"
@@ -16,7 +16,6 @@
 #include "STORE_SUPPLY.c"
 #include "STORE_REMOVE.c"
 #include "LOGOUT.c"
-#include "../ADT/custom.h"
 #include "../ADT/queue.c"
 
 extern boolean start;

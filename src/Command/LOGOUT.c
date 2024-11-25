@@ -1,5 +1,5 @@
 #include "LOGOUT.h"
-
+#include <stdio.h>
 User user;
 
 void LOGOUT(){

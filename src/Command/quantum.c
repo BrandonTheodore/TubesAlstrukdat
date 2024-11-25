@@ -1,6 +1,5 @@
 #include "quantum.h"
 User user;
-
 void playQuantumWordle() {
     srand(time(NULL));
 

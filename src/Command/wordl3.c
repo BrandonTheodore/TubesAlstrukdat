@@ -109,7 +109,6 @@ void playWordle() {
     printf("\n");
 
     while (attempts < MAX_ATTEMPTS_W && !win) {
-        int a = 0;
         Word guess;
         printf("Masukan kata tebakan Anda: ");
         readGuess(&guess);
