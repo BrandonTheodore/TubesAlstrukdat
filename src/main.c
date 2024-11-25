@@ -4,7 +4,6 @@
 #include <math.h>
 #include "Command/START.c"
 
-char input[5];
 
 int main(){
     MULAI();

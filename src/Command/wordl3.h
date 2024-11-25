@@ -4,10 +4,7 @@
 #include "boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-<<<<<<< Updated upstream:src/Command/wordl3.h
-=======
 #include "../ADT/Custom.h"
->>>>>>> Stashed changes:src/COMMAND/wordl3.h
 
 #ifndef WORDL3_H
 #define WORDL3_H

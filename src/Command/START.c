@@ -130,20 +130,11 @@ void MULAI(){
                 i++;
             }
             txt[i-j] = '\0';
-<<<<<<< Updated upstream
-            if(txt[0] = '\0'){
-                main_work();
-            } else if (isEqual(txt. "CHALLENGE")){
-                selectChallenge();
-            } else {
-                printf("Command salah!\n")
-=======
 
             if(txt[j] != '\0'){
                 selectChallenge();
             } else {
                 main_work();
->>>>>>> Stashed changes
             }
         } 
         else if(isEqual(command, "STORE")){
@@ -158,21 +149,6 @@ void MULAI(){
             if(isEqual(txt, "LIST")){
                 STORE_LIST();
             } else if(isEqual(txt, "REQUEST")){
-<<<<<<< Updated upstream
-                STORE_REQUEST();
-            } else if(isEqual(txt, "SUPPLY")){
-                STORE_SUPPLY();
-            } else if(isEqual(command, "REMOVE")){
-                STORE_REMOVE();
-            } else {
-                printf("Command salah!\n")
-            }
-        }  
-        else if(isEqual(command, "LOGOUT")){
-            LOGOUT();
-        } 
-        else if(isEqual(command, "HELP")){
-=======
                STORE_REQUEST(); 
             } else if(isEqual(txt, "SUPPLY")){
                 STORE_SUPPLY();
@@ -182,7 +158,6 @@ void MULAI(){
         } else if(isEqual(command, "LOGOUT")){
             LOGOUT();
         } else if(isEqual(command, "HELP")){
->>>>>>> Stashed changes
             HELP(start, login);
         }
         else if(isEqual(command, "SAVE")){
