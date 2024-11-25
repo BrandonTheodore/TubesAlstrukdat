@@ -12,11 +12,11 @@ User user;
 void MULAI(){
     if(!start && !login){
         printf("\n");
-        printf(" []=] __        _____ _     ____ ___  __  __ _____   _____ ___  \n");
-        printf("      \\ \\      / /___| |   / ___/ _ \\|  \\/  | ____|  |_   _/ _ \\ \n");
-        printf("       \\ \\ /\\ / /    | |  | |  | | | | |\\/| |  _|      | || | | |\n");
-        printf("        \\ V  V /     | |__| |__| |_| | |  | | |___     | || |_| |\n");
-        printf("         \\_/\\_/      |_____\\____\\___/|_|  |_|_____|    |_| \\___/ \n");
+        printf(" __        _______ _     ____ ___  __  __ _____   _____ ___  \n");
+        printf(" \\ \\      / / ____| |   / ___/ _ \\|  \\/  | ____|  |_   _/ _ \\ \n");
+        printf("  \\ \\ /\\ / /|  _| | |  | |  | | | | |\\/| |  _|      | || | | |\n");
+        printf("   \\ V  V / | |___| |__| |__| |_| | |  | | |___     | || |_| |\n");
+        printf("    \\_/\\_/  |_____|_____\\____\\___/|_|  |_|_____|    |_| \\___/ \n");
         printf("\n");
         printf("                    ____  _   _ ____  ____  __  __    _    ____ _____ \n");
         printf("                   |  _ \\| | | |  _ \\|  _ \\|  \\/  |  / \\  |  _ \\_   _|\n");
@@ -26,6 +26,7 @@ void MULAI(){
         printf("----------------------------------------------------------------------------------------------\n");
         printf("----------------------------------------------------------------------------------------------\n");
         printf("\n");
+
         printf("1. START\n");
         printf("2. LOAD\n");
         printf("3. QUIT\n");
@@ -132,9 +133,13 @@ void MULAI(){
             txt[i-j] = '\0';
 
             if(txt[j] != '\0'){
+                printf("\n");
+                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
                 selectChallenge();
+                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
             } else {
                 main_work();
+                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
             }
         } 
         else if(isEqual(command, "STORE")){
@@ -172,8 +177,8 @@ void MULAI(){
             SAVE(txt);
         } 
         else if(isEqual(command, "QUIT")){
-            printf("Apakah kamu ingin menyimpan file?(Y/N)\n")
-            printf(">>> ")
+            printf("Apakah kamu ingin menyimpan file?(Y/N)\n");
+            printf(">>> ");
             STARTWORD2();
             char command[50];
             int i = 0;

@@ -23,33 +23,37 @@ void selectChallenge() {
         currentWord.TabWord[i] = '\0';
     }
     currentWord.Length = 0;
-    
-    switch(choice) {
-        case 1:
-            if(user.money >= TA_COST){
-                user.money -=TA_COST;
-                playGuessingGame();
-                break;
-            } else {
-                printf("Saldo tidak cukup!");
-            }
-        case 2:
-            if(user.money >= W_COST){
-                user.money -=W_COST;
-                playWordle();
-                break;
-            } else {
-                printf("Saldo tidak cukup!");
-            }
-        case 3:
-            if(user.money >= QUANTUM_COST){
-                user.money -=QUANTUM_COST;
-                playQuantumWordle();
-                break;
-            } else {
-                printf("Saldo tidak cukup!");
-            }
-        default:
-            printf("Pilihan tidak valid.\n");
+
+    if (choice < 1 || choice > 3) {
+        printf("Pilihan tidak valid.\n");
+        return;
     }
+    else if (choice == 1) {
+        if (user.money >= TA_COST) {
+            user.money -= TA_COST;
+            playGuessingGame();
+        } 
+        else {
+            printf("Saldo tidak cukup!\n");
+        }
+    } 
+    else if (choice == 2) {
+        if (user.money >= W_COST) {
+            user.money -= W_COST;
+            playWordle();
+        } 
+        else {
+            printf("Saldo tidak cukup!\n");
+        }
+    } 
+    else if (choice == 3) {
+        if (user.money >= QUANTUM_COST) {
+            user.money -= QUANTUM_COST;
+            playQuantumWordle();
+        } 
+        else {
+            printf("Saldo tidak cukup!\n");
+        }
+    }
+    
 }
