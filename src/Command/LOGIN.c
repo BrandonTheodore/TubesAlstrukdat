@@ -6,6 +6,7 @@
 
 List L;
 User user;
+Queue queue;
 int IDX;
 
 void LOGIN(){
@@ -49,6 +50,7 @@ void LOGIN(){
             }
             user.name[k] = '\0';
             user.money = L.A[IDX].money;
+            CreateQueue(&queue);
         } else {
             printf("Password Salah!\n");
         }

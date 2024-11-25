@@ -53,12 +53,12 @@ void STORE_SUPPLY() {
                 printf("%s dengan harga %d telah ditambahkan ke toko.\n", barang.name, harga);
             }
 
-        } else if (isEqual(currentWord.TabWord, "Tunda")) {
+        } else if (isEqual(command, "Tunda")) {
             // Kembalikan barang ke antrian
             enqueue(&queue, barang);
             printf("%s dikembalikan ke antrian.\n", barang.name);
 
-        } else if (isEqual(currentWord.TabWord, "Tolak")) {
+        } else if (isEqual(command, "Tolak")) {
             // Hapus barang dari antrian
             printf("%s dihapuskan dari antrian.\n", barang.name);
 

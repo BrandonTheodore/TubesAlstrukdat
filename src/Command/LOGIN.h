@@ -6,6 +6,7 @@
 #include "../ADT/mesinkarakter.h"
 #include "../ADT/Custom.h"
 #include "../ADT/list.h"
+#include "../ADT/queue.h"
 
 extern boolean login;
 extern int IDX;
