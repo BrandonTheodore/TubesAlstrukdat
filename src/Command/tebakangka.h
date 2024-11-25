@@ -3,7 +3,6 @@
 #include <time.h>
 #include "../ADT/mesinkarakter.h"
 #include "../ADT/mesinkata.h"
-#include "saldo.h"
 #include "../ADT/boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"

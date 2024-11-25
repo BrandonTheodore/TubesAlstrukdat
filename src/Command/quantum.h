@@ -7,7 +7,6 @@
 #include "boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "saldo.h"
 #include "../ADT/boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"

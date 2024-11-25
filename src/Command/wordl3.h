@@ -4,7 +4,6 @@
 #include "boolean.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "saldo.h"
 
 #ifndef WORDL3_H
 #define WORDL3_H

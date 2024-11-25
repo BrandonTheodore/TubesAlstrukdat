@@ -7,7 +7,6 @@
 #include "../ADT/list.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "saldo.h"
 
 typedef struct {
     Word name;
