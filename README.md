@@ -30,6 +30,9 @@ Pastikan di komputer anda dapat menjalankan fungsi ```make```.
     ```
     sudo apt install make
     ```
-
 - Untuk OS Windows dapat menonton video dibawah :
 https://www.youtube.com/watch?v=a3ejgWLqelQ
+
+!jika tidak bisa! 
+-Ketik "mingw32-make" pada terminal bin, setelah itu akan muncul file purrmart.exe
+-jalankan program dengan ketik "./PURRMART" 

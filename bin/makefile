@@ -3,11 +3,11 @@ CFLAGS = -Wall -Werror -std=c11
 
 # Compile all C files in the src, src/* and src/*/* directories
 build:
-	$(CC) $(CFLAGS) ../src/main.c -o main
+	$(CC) $(CFLAGS) ../src/main.c -o purrmart
 
 # Run the compiled program
 run:
-	./main
+	./purrmart
 
 # Compile and run the program
 all:
