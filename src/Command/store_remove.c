@@ -3,7 +3,7 @@
 
 ArrayDin AD;
 
-void store_remove() {
+void STORE_REMOVE() {
     boolean found = false;
 
     printf("Nama barang yang akan dihapus: ");

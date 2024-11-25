@@ -1,18 +1,18 @@
 #include "store_request.h"
 #include <stdio.h>
-
+ArrayDin AD;
+Queue queue;
 /* Inisialisasi Store */
-void InitStore(Store *S) {
-    // Inisialisasi daftar barang di toko
-    *S = (Store){MakeList(), {IDX_UNDEF, IDX_UNDEF}};
-    CreateQueue(&(S->requestedItems));
-}
+// void InitStore(Store *S) {
+//     // Inisialisasi daftar barang di toko
+//     *S = (Store){MakeList(), {IDX_UNDEF, IDX_UNDEF}};
+//     CreateQueue(&(S->requestedItems));
+// }
 
 /* Mengecek apakah barang dengan nama tertentu sudah ada di toko */
-boolean IsItemInStore(Store S, char itemName[MAX_LEN]) {
-    for (int i = FirstIdx(S.storeItems); i <= LastIdx(S.storeItems); i++) {
-        char *currentItemName = (char *)Get(S.storeItems, i);
-        if (isEqual(currentItemName, itemName)) {
+boolean IsItemInStore(ArrayDin S, char itemName[MAX_LEN]) {
+    for (int i = 0; i < S.Neff; i++) {
+        if (isEqual(S.A[i].name, itemName)) {
             return true; // Barang ada di toko
         }
     }
@@ -20,10 +20,9 @@ boolean IsItemInStore(Store S, char itemName[MAX_LEN]) {
 }
 
 /* Mengecek barang yang sudah ada di antrian */
-boolean IsItemInQueue(Store S, char itemName[MAX_LEN]) {
-    for (int i = 0; i < length(S.requestedItems); i++) {
-        Barang currentItem = S.requestedItems.buffer[(S.requestedItems.idxHead + i) % CAPACITY];
-        if (isEqual(currentItem.name, itemName)) {
+boolean IsItemInQueue(Queue S, char itemName[MAX_LEN]) {
+    for (int i = IDX_HEAD(S); i <= IDX_TAIL(S); i++) {
+        if (isEqual(S.buffer[i], itemName)) {
             return true; // Barang ada di antrian
         }
     }
@@ -31,24 +30,25 @@ boolean IsItemInQueue(Store S, char itemName[MAX_LEN]) {
 }
 
 /* STORE REQUEST */
-void StoreRequest(Store *S) {
+void StoreRequest() {
     // Membaca input nama barang
     printf("Nama barang yang diminta: ");
     STARTWORD2(); 
     char requestedName[MAX_LEN];
     for (int i = 0; i < currentWord.Length; i++) {
         requestedName[i] = currentWord.TabWord[i];
+
     }
     requestedName[currentWord.Length] = '\0'; 
 
     // Periksa barang yang sudah ada di toko
-    if (IsItemInStore(*S, requestedName)) {
+    if (IsItemInStore(AD, requestedName)) {
         printf("Barang dengan nama yang sama sudah ada di toko!\n");
         return;
     }
 
     // Periksa barang yang sudah ada di antrian
-    if (IsItemInQueue(*S, requestedName)) {
+    if (IsItemInQueue(queue, requestedName)) {
         printf("Barang dengan nama yang sama sudah ada di antrian!\n");
         return;
     }

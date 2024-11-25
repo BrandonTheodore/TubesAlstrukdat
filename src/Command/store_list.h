@@ -4,6 +4,6 @@
 #include "../ADT/dynamiclist.h"
 
 // Fungsi untuk menampilkan daftar barang yang ada di toko
-void store_list(List *itemList);
+void STORE_LIST();
 
 #endif

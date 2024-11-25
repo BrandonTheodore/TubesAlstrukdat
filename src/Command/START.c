@@ -121,29 +121,45 @@ void MULAI(){
         command[i] = '\0';
 
         if (isEqual(command, "WORK")) {
-            main_work();
-            user.money = user.money + global_Saldo_work;
+            i++;
+            int j = i;
+            while(currentWord.TabWord[i] != '\0'){
+                txt[i - j] = currentWord.TabWord[i];
+                (&currentWord)->TabWord[i] = '\0';
+                i++;
+            }
+            txt[i-j] = '\0';
+            if(txt[0] = '\0'){
+                main_work();
+            } else if (isEqual(txt. "CHALLENGE")){
+                selectChallenge();
+            } else {
+                printf("Command salah!\n")
+            }
         } 
-        else if(isEqual(command, "WORK CHALLENGE")){
-            selectChallenge();
-            user.money = user.money + global_Saldo;
-        } 
-        else if(isEqual(command, "STORE LIST")){
-            STORE_LIST();
-        } 
-        else if(isEqual(command, "STORE REQUEST")){
-            STORE_REQUEST();
-        } 
-        else if(isEqual(command, "STORE SUPPLY")){
-            STORE_SUPPLY();
-        } 
-        else if(isEqual(command, "STORE REMOVE")){
-            STORE_REMOVE();
-        } 
+        else if(isEqual(command, "STORE")){
+            i++;
+            int j = i;
+            while(currentWord.TabWord[i] != '\0'){
+                txt[i - j] = currentWord.TabWord[i];
+                (&currentWord)->TabWord[i] = '\0';
+                i++;
+            }
+            txt[i-j] = '\0';
+            if(isEqual(txt, "LIST")){
+                STORE_LIST();
+            } else if(isEqual(txt, "REQUEST")){
+                STORE_REQUEST();
+            } else if(isEqual(txt, "SUPPLY")){
+                STORE_SUPPLY();
+            } else if(isEqual(command, "REMOVE")){
+                STORE_REMOVE();
+            } else {
+                printf("Command salah!\n")
+            }
+        }  
         else if(isEqual(command, "LOGOUT")){
-            start = false;
-            login = false;
-            MULAI();
+            LOGOUT();
         } 
         else if(isEqual(command, "HELP")){
             HELP(start, login);

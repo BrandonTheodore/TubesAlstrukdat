@@ -6,6 +6,6 @@
 #include "../ADT/dynamiclist.h"
 
 /* Fungsi untuk menghapus barang dari toko */
-void store_remove(List *storeInventory);
+void STORE_REMOVE(List *storeInventory);
 
 #endif

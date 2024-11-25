@@ -7,6 +7,7 @@
 #include "../ADT/list.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
+#include "boolean.h"
 
 typedef struct {
     Word name;

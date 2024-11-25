@@ -2,7 +2,7 @@
 #include <stdio.h>
 ArrayDin AD;
 
-void store_list() {
+void STORE_LIST() {
     if (AD.Neff == 0) {
         printf("TOKO KOSONG\n");
     } else {
