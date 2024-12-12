@@ -34,3 +34,9 @@ boolean IsEOP() {
     /* Algoritma */
     return EOP;
 }
+
+void reset() {
+    if (pita != NULL) {
+        rewind(pita);
+    }
+}

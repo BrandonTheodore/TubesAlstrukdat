@@ -116,8 +116,6 @@ void main_work(){
     JobList jobList;
     initializeJobs(&jobList);
     
-    // Tampilkan saldo awal
-    
     displayJobs(jobList);
 
     printf("\nMasukkan pekerjaan yang dipilih: ");

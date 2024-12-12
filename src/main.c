@@ -106,55 +106,59 @@ int main(){
         printf("10. HELP\n");
         printf(">>> ");
         STARTWORD2();
+
         char command[50];
         char txt[50];
         int i = 0;
-        while(currentWord.TabWord[i] != ' ' && currentWord.TabWord[i] != '\0'){
+
+        while(currentWord.TabWord[i] != '\0'){
             command[i] = currentWord.TabWord[i];
             (&currentWord)->TabWord[i] = '\0';
             i++;
         }
         command[i] = '\0';
         (&currentWord)->TabWord[i] = '\0';
-        if (isEqual(command, "WORK")) {
-            i++;
-            int j = i;
-            while(currentWord.TabWord[i] != '\0'){
-                txt[i - j] = currentWord.TabWord[i];
-                (&currentWord)->TabWord[i] = '\0';
-                i++;
-            }
-            txt[i-j] = '\0';
 
-            if(txt[j] != '\0'){
-                printf("\n");
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
-                selectChallenge();
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
-            } else {
-                main_work();
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
-            }
+        printf("%stes",command);
+
+       if (isEqual(command, "WORK")) {
+            printf("\n");
+            main_work();
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+       }
+       
+        else if(isEqual(command, "WORK CHALLENGE")){
+            printf("\n");
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+            selectChallenge(); 
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+        }
+        else if(isEqual(command, "STORE LIST")){
+            printf("\n");
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+            STORE_LIST();
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+        }
+        else if(isEqual(command, "STORE REQUEST")){
+            printf("\n");
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+            STORE_REQUEST();
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+        }
+        else if(isEqual(command, "STORE SUPPLY")){
+            printf("\n");
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+            STORE_SUPPLY();
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+        }
+        else if(isEqual(command, "STORE REMOVE")){
+            printf("\n");
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+            STORE_REMOVE();
+            printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
         } 
-        else if(isEqual(command, "STORE")){
-            i++;
-            int j = i;
-            while(currentWord.TabWord[i] != '\0'){
-                txt[i - j] = currentWord.TabWord[i];
-                (&currentWord)->TabWord[i] = '\0';
-                i++;
-            }
-            txt[i-j] = '\0';
-            if(isEqual(txt, "LIST")){
-                STORE_LIST();
-            } else if(isEqual(txt, "REQUEST")){
-               STORE_REQUEST(); 
-            } else if(isEqual(txt, "SUPPLY")){
-                STORE_SUPPLY();
-            } else if(isEqual(txt, "REMOVE")){
-                STORE_REMOVE();
-            }
-        } else if(isEqual(command, "LOGOUT")){
+
+        else if(isEqual(command, "LOGOUT")){
             LOGOUT();
         } else if(isEqual(command, "HELP")){
             HELP(start, login);
@@ -174,8 +178,10 @@ int main(){
             printf("Apakah kamu ingin menyimpan file?(Y/N)\n");
             printf(">>> ");
             STARTWORD2();
+
             char command[50];
             int i = 0;
+
             while(currentWord.TabWord[i] != ' ' && currentWord.TabWord[i] != '\0'){
                 command[i] = currentWord.TabWord[i];
                 (&currentWord)->TabWord[i] = '\0';
@@ -183,6 +189,7 @@ int main(){
             }
             command[i] = '\0';
             (&currentWord)->TabWord[i] = '\0';
+            
             if(isEqual(command, "Y")){
                 SAVE("default.txt");
             }

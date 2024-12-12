@@ -81,7 +81,7 @@ boolean isEndWord() {
 
 boolean isEqual(char x[100], char y[100]){
     boolean cek = true;
-    if(len(y) != len(y)){
+    if(len(x) != len(y)){
         cek = false;
         return cek;
     } else {
@@ -118,6 +118,7 @@ int len(char x[100]){
     }
     return i;
 }
+
 int wordToInt(Word word) {
     int result = 0;
     for (int i = 0; i < word.Length; i++) {
