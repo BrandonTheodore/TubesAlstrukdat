@@ -1,9 +1,9 @@
 #ifndef MASTER_COMMAND_H
 #define MASTER_COMMAND_H
 
+#include "../ADT/master_header_adt.h"
 #include "LOGIN/LOGIN.h"
 #include "HELP/HELP.h"
-#include "../ADT/master_header_adt.h"
 #include "WORK/work.h"
 #include "LOAD/LOAD.h"
 #include "LOGOUT/LOGOUT.h"

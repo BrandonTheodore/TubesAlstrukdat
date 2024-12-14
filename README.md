@@ -36,3 +36,9 @@ https://www.youtube.com/watch?v=a3ejgWLqelQ
 !jika tidak bisa! 
 - Ketik "mingw32-make" pada terminal bin, setelah itu akan muncul file purrmart.exe
 - jalankan program dengan ketik "./PURRMART" 
+
+{Cara Menjalankan gcc Secara Manual}
+- Navigasi ke Direktori src
+- Kompilasi Program Menggunakan gcc =
+gcc -o purrmart main.c ADT/dynamiclist/dynamiclist.c ADT/List/List.c ADT/mesinkarakter/mesinkarakter.c ADT/mesinkata/mesinkata.c ADT/queue/queue.c COMMAND/LOGIN/LOGIN.c COMMAND/HELP/HELP.c COMMAND/LOAD/LOAD.c COMMAND/LOGOUT/LOGOUT.c COMMAND/QUANTUM/quantum.c COMMAND/REGISTER/REGISTER.c COMMAND/SAVE/SAVE.c COMMAND/START/START.c COMMAND/STORE_LIST/store_list.c COMMAND/STORE_REMOVE/store_remove.c COMMAND/STORE_REQUEST/store_request.c COMMAND/STORE_SUPPLY/store_supply.c COMMAND/TEBAKANGKA/tebakangka.c COMMAND/WORDL3/wordl3.c COMMAND/WORK/work.c COMMAND/WORK_CHALLENGE/work_challenge.c
+- Jalankan Program dengan .\purrmart.exe

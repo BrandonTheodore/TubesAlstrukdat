@@ -1,5 +1,5 @@
-#include "help.h"
 #include <stdio.h>
+#include "help.h"
 
 void HELP(boolean start, boolean login) {
     if (!start) {
