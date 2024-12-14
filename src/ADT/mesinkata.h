@@ -58,4 +58,6 @@ int len(char x[100]);
 
 boolean isEqual(char x[100], char y[100]);
 
+void strcopy(char src[100], char dst[100]);
+
 #endif

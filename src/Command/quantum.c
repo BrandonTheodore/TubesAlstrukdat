@@ -1,5 +1,6 @@
 #include "quantum.h"
 User user;
+int user_id;
 void playQuantumWordle() {
     srand(time(NULL));
 
@@ -115,6 +116,7 @@ void playQuantumWordle() {
         printf("Selamat, Anda menang! Anda berhasil menebak semua kata!\n");
         printf("+3000 rupiah telah ditambahkan ke akun Anda.\n");
         user.money += 3000;
+        L.A[user_id].money += 3000;
     } else {
         printf("Boo! Anda kalah.\n");
         printf("Kata yang benar adalah:\n");

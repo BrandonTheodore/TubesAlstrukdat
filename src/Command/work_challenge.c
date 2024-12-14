@@ -1,7 +1,7 @@
 #include "work_challenge.h"
 
 User user;
-
+int user_id;
 void displayWorkChallenge() {
     printf(">>> WORK CHALLENGE\n");
     printf("Daftar challenge yang tersedia:\n");
@@ -31,6 +31,7 @@ void selectChallenge() {
     else if (choice == 1) {
         if (user.money >= TA_COST) {
             user.money -= TA_COST;
+            L.A[user_id].money -= TA_COST;
             playGuessingGame();
         } 
         else {
@@ -40,6 +41,7 @@ void selectChallenge() {
     else if (choice == 2) {
         if (user.money >= W_COST) {
             user.money -= W_COST;
+            L.A[user_id].money -= W_COST;
             playWordle();
         } 
         else {
@@ -49,6 +51,7 @@ void selectChallenge() {
     else if (choice == 3) {
         if (user.money >= QUANTUM_COST) {
             user.money -= QUANTUM_COST;
+            L.A[user_id].money -= QUANTUM_COST;
             playQuantumWordle();
         } 
         else {

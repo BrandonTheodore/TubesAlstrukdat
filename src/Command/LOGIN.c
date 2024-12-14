@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 #include "LOGIN.h"
-
+int user_id;
 List L;
 User user;
 Queue queue;
@@ -48,6 +48,7 @@ void LOGIN(){
                 user.password[k] = L.A[IDX].password[k];
                 k++;
             }
+            user_id = IDX;
             user.name[k] = '\0';
             user.money = L.A[IDX].money;
             CreateQueue(&queue);

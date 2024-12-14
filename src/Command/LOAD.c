@@ -6,6 +6,7 @@
 
 FILE* file;
 boolean load;
+boolean start;
 ArrayDin AD;
 List L;
 
@@ -29,7 +30,8 @@ void LOAD(char txt[50]){
         printf("File gagal dibaca!\n");
         load = false;
     } else {
-        printf("File %s berhasil dibaca!\n", txt);
+        printf("File %s berhasil dibaca!\n", txt); start = true;
+        printf("\n");
         load = true;
         int line;
         fscanf(file, "%d", &line);
@@ -53,5 +55,6 @@ void LOAD(char txt[50]){
         for(int i = 0; i < 2; i++){
             printf("%d %s %s\n", L.A[i].money, L.A[i].name, L.A[i].password);
         }
+        printf("\n");
     }
 }

@@ -13,7 +13,7 @@ void STORE_SUPPLY() {
         dequeue(&queue, &barang);
 
         // Tampilan
-        printf("Apakah kamu ingin menambahkan barang %s: ", barang.name);
+        printf("Apakah kamu ingin menambahkan barang %s (Terima/Tolak/Tunda): ", barang.name);
         STARTWORD2();
         char command[50];
         int i = 0;

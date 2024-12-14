@@ -129,3 +129,11 @@ int wordToInt(Word word) {
     return result;
 }
 
+void strcopy(char src[100], char dst[100]){
+    int i = 0;
+    while(src[i] != '\0'){
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = '\0';
+}

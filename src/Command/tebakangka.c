@@ -1,5 +1,6 @@
 #include "tebakangka.h"
 User user;
+int user_id;
 void playGuessingGame() {
     //menghasilkan angka random
     srand(time(NULL));
@@ -38,6 +39,7 @@ void playGuessingGame() {
             printf("\n---------------------------------!Selamat! Tebakanmu benar!--------------------------------------\n");
             printf("+%d rupiah telah ditambahkan ke akun anda.\n", reward);
             user.money += reward;
+            L.A[user_id].money += reward;
             return;
         } else if (guess < targetNumber) {
             printf("\n!Tebakanmu lebih kecil!\n\n");

@@ -1,5 +1,6 @@
 #include "wordl3.h"
 User user;
+int user_id;
 boolean isWordEqual3(Word word1, Word word2) {
   if (word1.Length != word2.Length) {
       return false;
@@ -138,6 +139,7 @@ void playWordle() {
             printf("Selamat, Anda menang!\n");
             printf("+1500 rupiah telah ditambahkan ke akun Anda.\n");
             user.money += 1500;
+            L.A[user_id].money += 1500;
         }
     }
 

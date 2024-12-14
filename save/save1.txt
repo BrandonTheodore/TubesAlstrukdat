@@ -1,10 +1,10 @@
-5
+4
 10 AK47
 20 Lalabu
 20 Ayam_Goreng_Crisbar
-10 Donat
-10 Donat
-3
+200 matt
+4
 100 adm 123
 100 admin alstrukdatkeren
 25 praktikan kerenbangetkak
+200 ajg babi
