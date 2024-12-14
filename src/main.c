@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "main.h"
+#include "ADT/master_header_adt.h"
+#include "COMMAND/master_header_command.h"
 
 boolean start;
 boolean login;
