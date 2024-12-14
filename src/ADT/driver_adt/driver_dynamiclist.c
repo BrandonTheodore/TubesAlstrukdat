@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../dynamiclist.h"
+#include "../master_header_adt.h"
 
 void printarr(ArrayDin array) {
     printf("isi array: [");

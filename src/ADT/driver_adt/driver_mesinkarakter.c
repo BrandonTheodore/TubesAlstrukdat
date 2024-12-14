@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../mesinkarakter.h"
+#include "../master_header_adt.h"
 
 int main() {
     printf("Masukkan sebuah kalimat (akhiri dengan titik) :\n");

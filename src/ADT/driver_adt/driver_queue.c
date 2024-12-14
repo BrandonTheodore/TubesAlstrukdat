@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../queue.h"
+#include "../master_header_adt.h"
 
 int main() {
     Queue q;

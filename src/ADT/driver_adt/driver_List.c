@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../List.h"
+#include "../master_header_adt.h"
 
 void printlist(List L) {
     printf("isi list:\n");

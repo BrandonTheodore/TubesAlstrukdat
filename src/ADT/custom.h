@@ -1,7 +1,7 @@
 #ifndef CUSTOM_H
 #define CUSTOM_H
 
-#include "boolean.h"
+#include "master_header_adt.h"
 
 
 #define MAX_LEN 50

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../mesinkata.h"
+#include "../master_header_adt.h"
 
 void printkata(Word word) {
     for (int i = 0; i < word.Length; i++) {

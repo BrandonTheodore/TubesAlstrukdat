@@ -75,7 +75,8 @@
     "store_request.h": "c",
     "queue.h": "c",
     "store_remove.h": "c",
-    "work_challenge.h": "c"
+    "work_challenge.h": "c",
+    "master_header_adt.h": "c"
   },
   "C_Cpp.dimInactiveRegions": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false
