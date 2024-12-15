@@ -137,3 +137,20 @@ void strcopy(char src[100], char dst[100]){
     }
     dst[i] = '\0';
 }
+
+void RESETWORD() {
+    currentWord.Length = 0;
+    for(int i = 0; i < MAX_LEN; i++) {
+        currentWord.TabWord[i] = '\0';
+    }
+}
+
+boolean isNumber(Word word) {
+    int i;
+    for (i = 0; i < word.Length; i++) {
+        if (word.TabWord[i] < '0' || word.TabWord[i] > '9') {
+            return false;
+        }
+    }
+    return true;
+}

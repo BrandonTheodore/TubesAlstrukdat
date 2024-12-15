@@ -9,5 +9,8 @@
 #include "mesinkarakter/mesinkarakter.h"
 #include "mesinkata/mesinkata.h"
 #include "queue/queue.h"
+#include "listlinier/listlinier.h"
+#include "stack/stack.h"
+#include "map/map.h"
 
 #endif 

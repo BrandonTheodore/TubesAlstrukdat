@@ -18,5 +18,18 @@
 #include "TEBAKANGKA/tebakangka.h"
 #include "WORDL3/wordl3.h"
 #include "WORK_CHALLENGE/work_challenge.h"
+#include "CART_ADD/CART_ADD.h"
+#include "CART_PAY/CART_PAY.h"
+#include "CART_REMOVE/CART_REMOVE.h"
+#include "CART_SHOW/CART_SHOW.h"
+#include "HISTORY/HISTORY.h"
+#include "PROFILE/PROFILE.h"
+#include "WISHLIST_ADD/WISHLIST_ADD.h"
+#include "WISHLIST_CLEAR/WISHLIST_CLEAR.h"
+#include "WISHLIST_REMOVE_1/WISHLIST_REMOVE_1.h"
+#include "WISHLIST_REMOVE_2/WISHLIST_REMOVE_2.h"
+#include "WISHLIST_SHOW/WISHLIST_SHOW.h"
+#include "WISHLIST_SWAP/WISHLIST_SWAP.h"
+
 
 #endif 

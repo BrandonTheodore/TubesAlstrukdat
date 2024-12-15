@@ -11,6 +11,11 @@ typedef struct {
 char name[MAX_LEN];
 char password[MAX_LEN];
 int money;
+char nickname[MAX_LEN];
+int umur;
+Map keranjang;
+Stack riwayat_pembelian;
+List wishlist;
 } User;
 
 extern User user;
