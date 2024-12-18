@@ -1,35 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <math.h>
 #include "SAVE.h"
 
 FILE *file;
-ArrayDin AD;
-List L;
+extern ArrayDin AD;
+extern List userList;
 
-void SAVE(char txt[50]){
+void SAVE(char txt[50]) {
     char path[100] = "../save/";
     int a = 8;
     int b = 0;
-    while(a < 100){
+    while(a < 100) {
         path[a] = txt[b];
         a++;
         b++;
     }
     path[a] = '\0';
-    printf("%s\n", txt);
-    printf("%s\n", path);
+    
     file = fopen(path, "w");
+    
+    // Save store items
     fprintf(file, "%d\n", AD.Neff);
-    for(int i = 0; i < AD.Neff; i++){
+    for(int i = 0; i < AD.Neff; i++) {
         fprintf(file, "%d %s\n", AD.A[i].price, AD.A[i].name);
     }
-    fprintf(file, "%d\n", L.Neff);
-    for(int i = 0; i < L.Neff; i++){
-        fprintf(file, "%d %s %s\n", L.A[i].money, L.A[i].name, L.A[i].password);
+    
+    // Save users
+    fprintf(file, "%d\n", userList.Neff);
+    for(int i = 0; i < userList.Neff; i++) {
+        // Save user basic info
+        fprintf(file, "%s %s %d %s %d\n", 
+            userList.A[i].name,
+            userList.A[i].password,
+            userList.A[i].money,
+            userList.A[i].nickname,
+            userList.A[i].umur
+        );
+        
+        // Save cart
+        fprintf(file, "%d\n", userList.A[i].keranjang.Count);
+        for(int j = 0; j < userList.A[i].keranjang.Count; j++) {
+            fprintf(file, "%s %d\n",
+                userList.A[i].keranjang.Elements[j].Key,
+                userList.A[i].keranjang.Elements[j].Value);
+        }
+        
+        // Save purchase hist
+        fprintf(file, "%d\n", userList.A[i].riwayat_pembelian.Top + 1);
+        for(int j = 0; j < userList.A[i].riwayat_pembelian.Top+1; j++) {
+            fprintf(file, "%s %d\n",
+                userList.A[i].riwayat_pembelian.T[j].namaBarang,
+                userList.A[i].riwayat_pembelian.T[j].totalHarga);
+        }
+        
+        // Save wishlist
+        int wishlistCount = NbElmtLinier(userList.A[i].wishlist);
+        fprintf(file, "%d\n", wishlistCount);
+        address_list P = First(userList.A[i].wishlist);
+        while(P != NilList) {
+            fprintf(file, "%s\n", Info(P));
+            P = Next(P);
+        }
     }
-
+    
     fclose(file);
-    printf("File berhasil di simpan!\n");
+    printf("File berhasil disimpan!\n");
 }

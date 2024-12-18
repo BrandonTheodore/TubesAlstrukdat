@@ -1,6 +1,5 @@
 #include "stack.h"
 
-#include "stack.h"
 boolean IsEmptyStack(Stack S) {
     return (Top(S) == NilStack);
 }

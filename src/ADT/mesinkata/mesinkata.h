@@ -4,10 +4,12 @@
 #ifndef __MESINKATA_H__
 #define __MESINKATA_H__
 
-#include "../master_header_adt.h"
+#include "../boolean.h"
+#include "../mesinkarakter/mesinkarakter.h"
 
 #define NMax 50
 #define BLANK ' '
+#define MAX_LEN 50
 
 typedef struct
 {
@@ -47,20 +49,15 @@ void CopyWord();
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
-void salinkata();
-int wordToInt();
-          
+int wordToInt(Word word) ; 
 boolean isEndWord();
-void CopyLine();
 
 int len(char x[100]);
-
 boolean isEqual(char x[100], char y[100]);
-
 void strcopy(char src[100], char dst[100]);
-
 void RESETWORD();
-
 boolean isNumber(Word word);
+void stringtoint(char *str, int *result) ;
+int strlength(char* str);
 
 #endif

@@ -108,7 +108,7 @@ void doWork(Job *selectedJob) {
     }
     
     user.money += selectedJob->income;
-    L.A[user_id].money += selectedJob->income;
+    userList.A[user_id].money += selectedJob->income;
     printf("Pekerjaan selesai, +%d rupiah telah ditambahkan ke akun Anda.\n", 
            selectedJob->income);
     

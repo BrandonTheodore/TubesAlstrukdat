@@ -1,8 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include "master_header_adt.h"
-
+#include "../boolean.h"
+#include "../mesinkata/mesinkata.h"
 // Constants
 #define NilMap 0
 #define MaxElMap 100
@@ -21,6 +21,8 @@ typedef struct {
     ElmtMap Elements[MaxElMap];
     int Count;
 } Map;
+
+extern Map store;
 
 // Macros
 #define Count(M) (M).Count

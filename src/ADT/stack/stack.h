@@ -1,7 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "master_header_adt.h"
+#include "../boolean.h"
+#include "../mesinkata/mesinkata.h"
 
 // Constants
 #define NilStack -1
@@ -10,7 +11,6 @@
 // Type Definitions
 typedef struct {
     char* namaBarang;
-    int jumlahBarang;
     int totalHarga;
 } infotypeStack;
 

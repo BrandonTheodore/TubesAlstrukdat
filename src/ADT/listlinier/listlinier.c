@@ -2,34 +2,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-boolean IsEmptyList(List L) {
+boolean IsEmptyLinier(Listlinier L) {
     return (First(L) == NilList);
 }
 
-void CreateEmptyList(List *L) {
+void CreateEmptyLinier(Listlinier *L) {
     First(*L) = NilList;
 }
 
-address_list AlokasiList(infotypelist X) {
+address_list AlokasiLinier(infotypelist X) {
     address_list P = (address_list)malloc(sizeof(ElmtList));
     if (P != NilList) {
-        Info(P) = (char*)malloc((strlength(X) + 1) * sizeof(char));
-        strcopy(Info(P), X);
+        int len = 0;
+        while (X[len] != '\0') {
+            len++;
+        }
+        Info(P) = (char*)malloc((len + 1) * sizeof(char));
+        int i = 0;
+        while (X[i] != '\0') {
+            Info(P)[i] = X[i];
+            i++;
+        }
+        Info(P)[i] = '\0';
         Next(P) = NilList;
     }
     return P;
 }
 
-void DealokasiList(address_list *P) {
-    free(Info(*P));
+void DealokasiLinier(address_list *P) {
+    free(Info((*P)));
     free(*P);
     *P = NilList;
 }
 
-address_list SearchList(List L, infotypelist X) {
+address_list SearchLinier(Listlinier L, infotypelist X) {
     address_list P = First(L);
     while (P != NilList) {
-        if (isKataEqual(Info(P), X)) {
+        if (isEqual(Info(P), X)) {
             return P;
         }
         P = Next(P);
@@ -37,47 +46,47 @@ address_list SearchList(List L, infotypelist X) {
     return NilList;
 }
 
-void InsVFirst(List *L, infotypelist X) {
-    address_list P = AlokasiList(X);
+void InsVFirstLinier(Listlinier *L, infotypelist X) {
+    address_list P = AlokasiLinier(X);
     if (P != NilList) {
-        InsertFirst(L, P);
+        InsertFirstLinier(L, P);
     }
 }
 
-void InsVLast(List *L, infotypelist X) {
-    address_list P = AlokasiList(X);
+void InsVLastLinier(Listlinier *L, infotypelist X) {
+    address_list P = AlokasiLinier(X);
     if (P != NilList) {
-        InsertLast(L, P);
+        InsertLastLinier(L, P);
     }
 }
 
-void DelVFirst(List *L, infotypelist *X) {
+void DelVFirstLinier(Listlinier *L, infotypelist *X) {
     address_list P;
-    DelFirst(L, &P);
+    DelFirstLinier(L, &P);
     *X = Info(P);
-    DealokasiList(&P);
+    DealokasiLinier(&P);
 }
 
-void DelVLast(List *L, infotypelist *X) {
+void DelVLastLinier(Listlinier *L, infotypelist *X) {
     address_list P;
-    DelLast(L, &P);
+    DelLastLinier(L, &P);
     *X = Info(P);
-    DealokasiList(&P);
+    DealokasiLinier(&P);
 }
 
-void InsertFirst(List *L, address_list P) {
+void InsertFirstLinier(Listlinier *L, address_list P) {
     Next(P) = First(*L);
     First(*L) = P;
 }
 
-void InsertAfter(List *L, address_list P, address_list Prec) {
+void InsertAfterLinier(Listlinier *L, address_list P, address_list Prec) {
     Next(P) = Next(Prec);
     Next(Prec) = P;
 }
 
-void InsertLast(List *L, address_list P) {
-    if (IsEmptyList(*L)) {
-        InsertFirst(L, P);
+void InsertLastLinier(Listlinier *L, address_list P) {
+    if (IsEmptyLinier(*L)) {
+        InsertFirstLinier(L, P);
     } else {
         address_list Last = First(*L);
         while (Next(Last) != NilList) {
@@ -87,33 +96,33 @@ void InsertLast(List *L, address_list P) {
     }
 }
 
-void DelFirst(List *L, address_list *P) {
+void DelFirstLinier(Listlinier *L, address_list *P) {
     *P = First(*L);
     First(*L) = Next(First(*L));
-    Next(*P) = NilList;
+    Next((*P)) = NULL;
 }
 
-void DelP(List *L, infotypelist X) {
+void DelPLinier(Listlinier *L, infotypelist X) {
     address_list P = First(*L);
-    if (isKataEqual(Info(P), X)) {
-        DelFirst(L, &P);
-        DealokasiList(&P);
+    if (isEqual(Info(P), X)) {
+        DelFirstLinier(L, &P);
+        DealokasiLinier(&P);
     } else {
         address_list Prec = NilList;
-        while (P != NilList && !isKataEqual(Info(P), X)) {
+        while (P != NilList && !isEqual(Info(P), X)) {
             Prec = P;
             P = Next(P);
         }
         if (P != NilList) {
-            DelAfter(L, &P, Prec);
-            DealokasiList(&P);
+            DelAfterLinier(L, &P, Prec);
+            DealokasiLinier(&P);
         }
     }
 }
 
-void DelLast(List *L, address_list *P) {
+void DelLastLinier(Listlinier *L, address_list *P) {
     if (Next(First(*L)) == NilList) {
-        DelFirst(L, P);
+        DelFirstLinier(L, P);
     } else {
         address_list Prec = NilList;
         address_list Last = First(*L);
@@ -126,13 +135,17 @@ void DelLast(List *L, address_list *P) {
     }
 }
 
-void DelAfter(List *L, address_list *Pdel, address_list Prec) {
-    *Pdel = Next(Prec);
-    Next(Prec) = Next(*Pdel);
-    Next(*Pdel) = NilList;
+void DelAfterLinier(Listlinier *L, address_list *Pdel, address_list Prec) {
+    if (Prec != NilList && Next(Prec) != NilList) {  
+        *Pdel = Next(Prec);         //
+        Next(Prec) = Next((*Pdel));   
+        Next((*Pdel)) = NilList;      
+    } else {
+        *Pdel = NilList;            
+    }
 }
 
-void PrintInfo(List L) {
+void PrintInfoLinier(Listlinier L) {
     address_list P = First(L);
     int id=1;
     printf("Berikut adalah isi wishlist: \n");
@@ -143,7 +156,7 @@ void PrintInfo(List L) {
     }
 }
 
-int NbElmtList(List L) {
+int NbElmtLinier(Listlinier L) {
     int count = 0;
     address_list P = First(L);
     while (P != NilList) {
@@ -153,7 +166,7 @@ int NbElmtList(List L) {
     return count;
 }
 
-void InversList(List *L) {
+void InversLinier(Listlinier *L) {
     address_list P = First(*L);
     address_list Prec = NilList;
     address_list Succ;
@@ -166,10 +179,10 @@ void InversList(List *L) {
     First(*L) = Prec;
 }
 
-void Konkat1(List *L1, List *L2, List *L3) {
+void Konkat1Linier(Listlinier *L1, Listlinier *L2, Listlinier *L3) {
     address_list Last1;
-    CreateEmptyList(L3);
-    if (IsEmptyList(*L1)) {
+    CreateEmptyLinier(L3);
+    if (IsEmptyLinier(*L1)) {
         First(*L3) = First(*L2);
     } else {
         First(*L3) = First(*L1);

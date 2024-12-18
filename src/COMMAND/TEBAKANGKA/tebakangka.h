@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../master_header_command.h"
-
+#include "../../ADT/master_header_adt.h"
 #ifndef TEBAKANGKA_H
 #define TEBAKANGKA_H
 

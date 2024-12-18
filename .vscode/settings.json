@@ -76,7 +76,14 @@
     "queue.h": "c",
     "store_remove.h": "c",
     "work_challenge.h": "c",
-    "master_header_adt.h": "c"
+    "master_header_adt.h": "c",
+    "CART_ADD.C": "cpp",
+    "CART_REMOVE.C": "cpp",
+    "store_list.h": "c",
+    "listlinier.h": "c",
+    "ASCIART.C": "cpp",
+    "dynamiclist.h": "c",
+    "list.h": "c"
   },
   "C_Cpp.dimInactiveRegions": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false

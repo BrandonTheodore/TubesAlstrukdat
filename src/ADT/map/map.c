@@ -18,7 +18,7 @@ void InsertMap(Map *M, keytype k, valuetype v) {
             printf("Gagal mengalokasikan memori untuk Key\n");
             return;
         }
-        strcopy(M->Elements[M->Count].Key, k);
+        strcopy(k, M->Elements[M->Count].Key);
         M->Elements[M->Count].Value = v;
         M->Count++;
     }
@@ -26,7 +26,7 @@ void InsertMap(Map *M, keytype k, valuetype v) {
 
 void DeleteMap(Map *M, keytype k) {
     address_map idx = 0;
-    while (idx < Count(*M) && !isKataEqual(Elements(*M)[idx].Key, k)) {
+    while (idx < Count(*M) && !isEqual(Elements(*M)[idx].Key, k)) {
         idx++;
     }
     if (idx < Count(*M)) {
@@ -39,7 +39,7 @@ void DeleteMap(Map *M, keytype k) {
 
 boolean IsMemberMap(Map M, keytype k) {
     for (int i = 0; i < M.Count; i++) {
-        if (isKataEqual(M.Elements[i].Key, k)) {
+        if (isEqual(M.Elements[i].Key, k)) {
             return true;
         }
     }
@@ -49,7 +49,7 @@ boolean IsMemberMap(Map M, keytype k) {
 int idxMap(Map M, keytype k) {
     address_map idx = 0;
     while (idx < Count(M)) {
-        if (isKataEqual(Elements(M)[idx].Key, k)) {
+        if (isEqual(Elements(M)[idx].Key, k)) {
             return idx;
         }
         idx++;

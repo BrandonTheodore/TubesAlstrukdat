@@ -2,7 +2,7 @@
 #define QUANTUM_H
 
 #include "../master_header_command.h"
-
+#include "../../ADT/master_header_adt.h"
 #define MAX_QUANTUM_ATTEMPTS 9
 #define QUANTUM_WORDS 4
 #define NMax 50 

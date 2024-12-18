@@ -140,7 +140,7 @@ void playWordle() {
             printf("Selamat, Anda menang!\n");
             printf("+1500 rupiah telah ditambahkan ke akun Anda.\n");
             user.money += 1500;
-            L.A[user_id].money += 1500;
+            userList.A[user_id].money += 1500;
         }
     }
 

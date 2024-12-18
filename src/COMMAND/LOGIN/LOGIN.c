@@ -5,7 +5,6 @@
 #include "LOGIN.h"
 
 int user_id;
-List L;
 User user;
 Queue queue;
 int IDX;
@@ -32,26 +31,26 @@ void LOGIN(){
     }
     pass[j] = '\0';
 
-    boolean cek = Search(L, nama, &IDX);
+    boolean cek = Search(userList, nama, &IDX);
     if(cek){
-        if(isEqual(L.A[IDX].password, pass)){
+        if(isEqual(userList.A[IDX].password, pass)){
             printf("LOGIN BERHASIL!\n");
             login = true;
             int j = 0;
-            while(L.A[IDX].name[j] != '\0'){
-                user.name[j] = L.A[IDX].name[j];
+            while(userList.A[IDX].name[j] != '\0'){
+                user.name[j] = userList.A[IDX].name[j];
                 j++;
             }
             user.name[j] = '\0';
 
             int k = 0;
-            while(L.A[IDX].password[k] != '\0'){
-                user.password[k] = L.A[IDX].password[k];
+            while(userList.A[IDX].password[k] != '\0'){
+                user.password[k] = userList.A[IDX].password[k];
                 k++;
             }
             user_id = IDX;
             user.name[k] = '\0';
-            user.money = L.A[IDX].money;
+            user.money = userList.A[IDX].money;
             CreateQueue(&queue);
         } else {
             printf("Password Salah!\n");

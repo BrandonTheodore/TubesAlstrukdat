@@ -10,7 +10,9 @@ void STORE_LIST() {
         printf("List barang yang ada di toko:\n");
         
         for (int i = 0; i < AD.Neff; i++) {
-            printf("%s\n", AD.A[i].name);            
+            printf("- %s - Harga: %d\n", 
+                AD.A[i].name,
+                AD.A[i].price);            
         }
     }
 }

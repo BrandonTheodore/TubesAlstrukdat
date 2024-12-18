@@ -1,8 +1,8 @@
 #ifndef LISTLINIER_H
 #define LISTLINIER_H
 
-#include "master_header_adt.h"
-
+#include "../boolean.h"
+#include "../mesinkata/mesinkata.h"
 #define NilList NULL
 
 // Type Definitions
@@ -14,7 +14,7 @@ typedef struct tElmtList {
 } ElmtList;
 typedef struct {
     address_list First;
-} List;
+} Listlinier;
 
 // Macros
 #define First(L) ((L).First)
@@ -22,25 +22,25 @@ typedef struct {
 #define Next(P) (P->Next)
 
 // Function Prototypes
-boolean IsEmptyList(List L);
-void CreateEmptyList(List *L);
-address_list AlokasiList(infotypelist X);
-void DealokasiList(address_list *P);
-address_list SearchList(List L, infotypelist X);
-void InsVFirst(List *L, infotypelist X);
-void InsVLast(List *L, infotypelist X);
-void DelVFirst(List *L, infotypelist *X);
-void DelVLast(List *L, infotypelist *X);
-void InsertFirst(List *L, address_list P);
-void InsertAfter(List *L, address_list P, address_list Prec);
-void InsertLast(List *L, address_list P);
-void DelFirst(List *L, address_list *P);
-void DelP(List *L, infotypelist X);
-void DelLast(List *L, address_list *P);
-void DelAfter(List *L, address_list *Pdel, address_list Prec);
-void PrintInfo(List L);
-int NbElmtList(List L);
-void InversList(List *L);
-void Konkat1(List *L1, List *L2, List *L3);
+boolean IsEmptyLinier(Listlinier L);
+void CreateEmptyLinier(Listlinier *L);
+address_list AlokasiLinier(infotypelist X);
+void DealokasiLinier(address_list *P);
+address_list SearchLinier(Listlinier L, infotypelist X);
+void InsVFirstLinier(Listlinier *L, infotypelist X);
+void InsVLastLinier(Listlinier *L, infotypelist X);
+void DelVFirstLinier(Listlinier *L, infotypelist *X);
+void DelVLastLinier(Listlinier *L, infotypelist *X);
+void InsertFirstLinier(Listlinier *L, address_list P);
+void InsertAfterLinier(Listlinier *L, address_list P, address_list Prec);
+void InsertLastLinier(Listlinier *L, address_list P);
+void DelFirstLinier(Listlinier *L, address_list *P);
+void DelPLinier(Listlinier *L, infotypelist X);
+void DelLastLinier(Listlinier *L, address_list *P);
+void DelAfterLinier(Listlinier *L, address_list *Pdel, address_list Prec);
+void PrintInfoLinier(Listlinier L);
+int NbElmtLinier(Listlinier L);
+void InversLinier(Listlinier *L);
+void Konkat1Linier(Listlinier *L1, Listlinier *L2, Listlinier *L3);
 
 #endif

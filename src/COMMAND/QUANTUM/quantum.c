@@ -79,7 +79,7 @@ void playQuantumWordle() {
                 compareGuess(guesses[i], secretWords[i], &result);
                 results[attempts][i] = result;
 
-                if (isWordEqual(guesses[i], secretWords[i])) {
+                if (isWordEqual3(guesses[i], secretWords[i])) {
                     wins[i] = true;
                 }
             } else {
@@ -118,7 +118,7 @@ void playQuantumWordle() {
         printf("Selamat, Anda menang! Anda berhasil menebak semua kata!\n");
         printf("+3000 rupiah telah ditambahkan ke akun Anda.\n");
         user.money += 3000;
-        L.A[user_id].money += 3000;
+        userList.A[user_id].money += 3000;
     } else {
         printf("Boo! Anda kalah.\n");
         printf("Kata yang benar adalah:\n");

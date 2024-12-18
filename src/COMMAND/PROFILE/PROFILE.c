@@ -7,6 +7,8 @@ void PROFILE() {
         return;
     }
 
+    User *user = &userList.A[IDX];  
+
     printf("..................................................\n");
     printf("..................................................\n");
     printf("..................................................\n");
@@ -85,7 +87,7 @@ void PROFILE() {
                 printf("Umur tidak valid.\n");
                 return;
             }
-            user->umur = WordToInt(currentWord);
+            user->umur = wordToInt(currentWord);
             printf("Umur Anda berhasil diperbarui menjadi: %d\n", user->umur);
         }
         else if (isEqual(currentWord.TabWord, "Nama") || isEqual(currentWord.TabWord, "3")) {
@@ -116,4 +118,3 @@ void PROFILE() {
         printf("Pilihan tidak valid.\n");
     }
 }
-

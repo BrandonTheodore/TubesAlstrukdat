@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "REGISTER.h"
 
-List L;
 User user;
 
 void REGISTER(){
@@ -16,7 +15,7 @@ void REGISTER(){
         i++;
     }
     nama[i] = '\0';
-    if(!Search(L, nama, &idx)){
+    if(!Search(userList, nama, &idx)){
         printf("Password: ");
         STARTWORD2();
         char pass[50];
@@ -28,7 +27,14 @@ void REGISTER(){
         }
         pass[j] = '\0';
         int money = 0;
-        InsertLast(&L, nama, pass, money);
+        User newUser;
+        strcopy(newUser.name, nama);
+        strcopy(newUser.password, pass);
+        newUser.money = money;
+        CreateEmptyLinier(&newUser.wishlist);
+        CreateEmptyMap(&newUser.keranjang);
+        CreateEmptyStack(&newUser.riwayat_pembelian);
+        InsertLast(&userList, newUser);
     } else {
         printf("Username sudah ada!\n");
     }

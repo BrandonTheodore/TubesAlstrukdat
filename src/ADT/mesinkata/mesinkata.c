@@ -154,3 +154,20 @@ boolean isNumber(Word word) {
     }
     return true;
 }
+
+void stringtoint(char *str, int *result) {
+    *result = 0;
+    int i = 0;
+    while (str[i] != '\0') {
+        *result = (*result * 10) + (str[i] - '0');
+        i++;
+    }
+}
+
+int strlength(char* str) {
+    int len = 0;
+    while (str[len] != '\0') {
+        len++;
+    }
+    return len;
+}

@@ -4,7 +4,7 @@
 #ifndef __MESIN_KAR_H_
 #define __MESIN_KAR_H_
 
-#include "../master_header_adt.h"
+#include "../boolean.h"
 
 #define MARK '\0'
 /* State Mesin */

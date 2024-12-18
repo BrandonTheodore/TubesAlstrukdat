@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../master_header_command.h"
+#include "../../ADT/master_header_adt.h"
 
 // Konstanta
 #define TA_COST 200

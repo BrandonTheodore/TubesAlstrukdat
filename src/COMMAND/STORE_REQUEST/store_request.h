@@ -2,7 +2,7 @@
 #define STORE_REQUEST_H
 
 #include "../master_header_command.h"
-
+#include "../../ADT/master_header_adt.h"
 /* ********** CONSTANTS ********** */
 #define MAX_STORE_ITEMS 100
 
