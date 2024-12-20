@@ -15,6 +15,17 @@ void IgnoreBlanks()
     }
 }
 
+void IgnoreCRLF()
+{
+    /* Mengabaikan satu atau beberapa '\n'
+       I.S. : currentChar sembarang
+       F.S. : currentChar ≠ '\n' atau currentChar = MARK */
+    while (currentChar == '\n')
+    {
+        ADV();
+    }
+}
+
 void STARTWORD()
 {
     /* I.S. : currentChar sembarang
@@ -95,6 +106,7 @@ boolean isEqual(char x[100], char y[100]){
 }
 
 void STARTWORD2() {
+    RESETWORD();
     START(); 
     IgnoreBlanks();  
     
@@ -171,3 +183,31 @@ int strlength(char* str) {
     }
     return len;
 }
+
+void baca_line() {
+    IgnoreCRLF();
+    int i = 0;
+    while(currentChar != '\n'){
+        currentWord.TabWord[i] = currentChar;
+        adv_baris();
+        i++;
+    }
+    currentWord.TabWord[i] = '\0';
+    currentWord.Length = i;
+}
+
+void ADVWORD2() {
+    IgnoreBlanks();
+    currentWord.Length = 0;
+    while (currentChar != BLANK && currentChar != MARK) {
+        if (currentWord.Length < NMax) {
+            currentWord.TabWord[currentWord.Length] = currentChar;
+            currentWord.Length++;
+        }
+        ADV();  
+    }
+    endWord = (currentChar == MARK);
+}
+
+
+

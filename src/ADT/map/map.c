@@ -56,3 +56,21 @@ int idxMap(Map M, keytype k) {
     }
     return -1;
 }
+
+int idxMaxValueMap(Map M) {
+    if (IsEmptyMap(M)) {
+        return -1;  // Return -1 if map is empty
+    }
+    
+    int maxIdx = 0;
+    valuetype maxValue = M.Elements[0].Value;
+    
+    for (int i = 1; i < M.Count; i++) {
+        if (M.Elements[i].Value > maxValue) {
+            maxValue = M.Elements[i].Value;
+            maxIdx = i;
+        }
+    }
+    
+    return maxIdx;
+}

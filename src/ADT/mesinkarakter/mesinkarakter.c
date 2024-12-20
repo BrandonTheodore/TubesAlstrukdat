@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "mesinkarakter.h"
+#include "../../COMMAND/LOAD/LOAD.h"
 
 char currentChar;
 boolean EOP;
@@ -38,5 +39,24 @@ boolean IsEOP() {
 void reset() {
     if (pita != NULL) {
         rewind(pita);
+    }
+}
+
+void adv_baris() {
+    int result = fscanf(pita, "%c", &currentChar);
+    EOP = (result == EOF);
+    if (EOP){
+        fclose(pita);
+    }
+}
+void start_files(char *filename) {
+    pita = fopen(filename, "r");
+    if (pita == NULL) {
+        printf("File tidak ditemukan\n");
+        load = false;
+    } 
+    else {
+        ADV();
+        load = true;
     }
 }

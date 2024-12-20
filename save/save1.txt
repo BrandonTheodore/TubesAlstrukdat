@@ -4,7 +4,8 @@
 20 KONTOL
 500 Meong
 2
-1000000 user1 alstrukdatkeren
+100 user1 alstrukdatkeren matt
+18
 6
 40 AK47
 100 AK47
@@ -15,7 +16,8 @@
 2
 KONTOL
 AK47
-25 user2 kerenbangetkak
+25 user2 kerenbangetkak matt
+18
 0
 1
 Meong

@@ -5,6 +5,7 @@
 #define __MESIN_KAR_H_
 
 #include "../boolean.h"
+#include "../mesinkata/mesinkata.h"
 
 #define MARK '\0'
 /* State Mesin */
@@ -34,5 +35,11 @@ boolean IsEOP();
 /* Mengirimkan true jika currentChar = MARK */
 
 void reset();
+
+void adv_baris();
+
+void start_files(char *filename);
+
+void IgnoreCRLF();
 
 #endif

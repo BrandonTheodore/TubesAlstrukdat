@@ -39,19 +39,21 @@ void CART_PAY() {
     if (isEqual(currentWord.TabWord, "Ya")) {
         if (user->money >= totalCost) {
             user->money -= totalCost;
+
+            int m = idxMaxValueMap(user->keranjang);
+            infotypeStack purchase;
+            char b = user->keranjang.Elements[m].Key;
+            purchase.namaBarang = (char*)malloc((strlength(b) + 1) * sizeof(char));
+            strcopy(user->keranjang.Elements[m].Key, purchase.namaBarang);
+            purchase.totalHarga = user->keranjang.Elements[m].Value * AD.A[SearchArrayDin(AD,b)].price;
+            PushStack(&user->riwayat_pembelian, purchase);
+
+
             for (int i = 0; i < user->keranjang.Count; i++) {
                 char itemName[100]; strcopy(user->keranjang.Elements[i].Key, itemName);
                 int quantity = user->keranjang.Elements[i].Value;
                 int price = AD.A[SearchArrayDin(AD, itemName)].price;
                 int itemTotal = quantity * price;
-                
-                // Add to purchase history
-                
-                infotypeStack purchase;
-                purchase.namaBarang= (char*)malloc((strlength(itemName) + 1) * sizeof(char));
-                strcopy(itemName, purchase.namaBarang);
-                purchase.totalHarga = itemTotal;
-                PushStack(&user->riwayat_pembelian, purchase);
             }
             CreateEmptyMap(&user->keranjang);
             printf("\nSelamat kamu telah membeli barang-barang tersebut!\n");

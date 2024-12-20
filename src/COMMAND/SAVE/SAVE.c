@@ -29,7 +29,7 @@ void SAVE(char txt[50]) {
     fprintf(file, "%d\n", userList.Neff);
     for(int i = 0; i < userList.Neff; i++) {
         // Save user basic info
-        fprintf(file, "%s %s %d %s %d\n", 
+        fprintf(file, "\n%s %s %d %s %d\n", 
             userList.A[i].name,
             userList.A[i].password,
             userList.A[i].money,
@@ -37,15 +37,7 @@ void SAVE(char txt[50]) {
             userList.A[i].umur
         );
         
-        // Save cart
-        fprintf(file, "%d\n", userList.A[i].keranjang.Count);
-        for(int j = 0; j < userList.A[i].keranjang.Count; j++) {
-            fprintf(file, "%s %d\n",
-                userList.A[i].keranjang.Elements[j].Key,
-                userList.A[i].keranjang.Elements[j].Value);
-        }
-        
-        // Save purchase hist
+        // Save purchase history
         fprintf(file, "%d\n", userList.A[i].riwayat_pembelian.Top + 1);
         for(int j = 0; j < userList.A[i].riwayat_pembelian.Top+1; j++) {
             fprintf(file, "%s %d\n",

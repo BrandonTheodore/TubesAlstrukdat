@@ -35,5 +35,6 @@ void InsertMap(Map *M, keytype k, valuetype v);
 void DeleteMap(Map *M, keytype k);
 boolean IsMemberMap(Map M, keytype k);
 int idxMap(Map M, keytype k);
+int idxMaxValueMap(Map M);
 
 #endif

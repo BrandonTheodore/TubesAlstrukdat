@@ -59,5 +59,7 @@ void RESETWORD();
 boolean isNumber(Word word);
 void stringtoint(char *str, int *result) ;
 int strlength(char* str);
+void baca_line();
+void ADVWORD2();
 
 #endif

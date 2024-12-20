@@ -25,12 +25,18 @@ void REGISTER(){
             (&currentWord)->TabWord[j] = '\0';
             j++;
         }
+        printf("%s",pass);
+        printf("%s",nama);
         pass[j] = '\0';
         int money = 0;
+        int umur = 0;
+        char nickname[50] = {'\0'};
         User newUser;
-        strcopy(newUser.name, nama);
-        strcopy(newUser.password, pass);
+        strcopy(nama, newUser.name);
+        strcopy(pass, newUser.password);
         newUser.money = money;
+        newUser.umur = umur;
+        strcopy(nickname, newUser.nickname);
         CreateEmptyLinier(&newUser.wishlist);
         CreateEmptyMap(&newUser.keranjang);
         CreateEmptyStack(&newUser.riwayat_pembelian);
