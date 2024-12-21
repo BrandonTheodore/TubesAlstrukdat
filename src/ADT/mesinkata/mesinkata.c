@@ -90,19 +90,21 @@ boolean isEndWord() {
     return endWord;
 }
 
-boolean isEqual(char x[100], char y[100]){
-    boolean cek = true;
-    if(len(x) != len(y)){
-        cek = false;
-        return cek;
-    } else {
-        for(int i = 0; x[i] != '\0'; i++){
-            if(x[i] != y[i]){
-                cek = false;
-            }
-        }
-        return cek;
+boolean isEqual(char x[100], char y[100]) {
+    int lenX = len(x);
+    int lenY = len(y);
+    
+    if (lenX != lenY) {
+        return false;
     }
+    
+    for (int i = 0; i < lenX; i++) {
+        if (x[i] != y[i]) {
+            return false; 
+        }
+    }
+    
+    return true;  
 }
 
 void STARTWORD2() {

@@ -121,6 +121,7 @@ int main()
                 
             } else if(isEqual(command, "QUIT") || isEqual(command, "3")){
                 clear_terminal();
+                ascii_quit();
                 printf("Aplikasi akan ditutup");
                 exit(EXIT_SUCCESS);
             } else if(isEqual(command, "HELP") || isEqual(command, "4")){
@@ -155,9 +156,11 @@ int main()
             command[i] = '\0';
             if(isEqual(command, "REGISTER") || isEqual(command, "1")){
                 clear_terminal();
+                asci_register();
                 REGISTER();
             } else if (isEqual(command, "LOGIN") || isEqual(command, "2")) {
                 clear_terminal();  
+                asci_login();
                 LOGIN();
             } 
             else if (isEqual(command, "PROFILE") || isEqual(command, "3")) {
@@ -166,6 +169,7 @@ int main()
             }
             else if(isEqual(command, "QUIT") || isEqual(command, "4")){
                 clear_terminal();
+                ascii_quit();
                 printf("Apakah kamu ingin menyimpan file? (Y/N)\n");
                 printf(">>> ");
                 STARTWORD2();
@@ -337,32 +341,58 @@ int main()
                 clear_terminal();
                 printf("\n");
                 ascii_cartadd();
-                char name[100],temp[100]; 
-                int jumlah,index3=index2,space=0;
+                char name[100], temp[100]; 
+                int jumlah = -1, index3 = index2, space = 0;
+                boolean isNumeric = true;
 
-                while (currentWord.TabWord[index2]!= '\0')
-                {
-                    if (currentWord.TabWord[index2] ==' ') space++;
+                while (currentWord.TabWord[index2] != '\0') {
+                    if (currentWord.TabWord[index2] == ' ') space++;
                     index2++;
                 }
-                index2=index3; 
-                index3=0;
+                index2 = index3;
+                index3 = 0;
 
-                while (space!=0)
-                {
+                while (space > 1) {
                     name[index3++] = currentWord.TabWord[index2++];
-                    if (currentWord.TabWord[index2]==' ') space--;
-                    if (currentWord.TabWord[index2]=='\0') break;
+                    if (currentWord.TabWord[index2] == ' ') space--;
                 }
                 
-                name[index3]='\0'; index2++; index3=0;
-                while (currentWord.TabWord[index2]!= '\0')
-                {
-                    temp[index3++] = currentWord.TabWord[index2++];
+                if (space == 1) {
+                    while (currentWord.TabWord[index2] != ' ') {
+                        name[index3++] = currentWord.TabWord[index2++];
+                    }
+                    index2++; 
+                    
+                    int tempIndex = 0;
+                    while (currentWord.TabWord[index2] != '\0') {
+                        if (currentWord.TabWord[index2] < '0' || currentWord.TabWord[index2] > '9') {
+                            isNumeric = false;
+                            name[index3++] = ' ';
+                            while (currentWord.TabWord[index2] != '\0') {
+                                name[index3++] = currentWord.TabWord[index2++];
+                            }
+                            break;
+                        }
+                        temp[tempIndex++] = currentWord.TabWord[index2++];
+                    }
+                    temp[tempIndex] = '\0';
+                    
+                    if (isNumeric && tempIndex > 0) {
+                        name[index3] = '\0';
+                        stringtoint(temp, &jumlah);
+                    } else {
+                        name[index3] = '\0';
+                        jumlah = -1;
+                    }
+                } else {
+                    while (currentWord.TabWord[index2] != '\0') {
+                        name[index3++] = currentWord.TabWord[index2++];
+                    }
+                    name[index3] = '\0';
+                    jumlah = -1;
                 }
-                temp[index3]='\0'; 
-                stringtoint(temp,&jumlah);
-                CART_ADD(name,jumlah);
+                
+                CART_ADD(name, jumlah);
             }
 
             else if (isEqual(command2, "CART REMOVE")) {
@@ -424,13 +454,13 @@ int main()
             else if(isEqual(command3, "WISHLIST REMOVE")){
                 clear_terminal();
                 printf("\n");
-                ascii_wishlistremove1();
+                ascii_wishlistremove();
                 WISHLIST_REMOVE_2();
             }
             else if(isEqual(command2, "WISHLIST REMOVE")){
                 clear_terminal();
                 printf("\n");
-                ascii_wishlistremove1();
+                ascii_wishlistremove();
                 int i,index3=0;char temp[100];
                 while (currentWord.TabWord[index2]!='\0')
                 {
@@ -441,19 +471,19 @@ int main()
 
                 WISHLIST_REMOVE_1(i);
             }
-            else if(isEqual(command2, "WISHLIST CLEAR") || isEqual(command, "15")){
+            else if(isEqual(command2, "WISHLIST CLEAR") || isEqual(command, "14")){
                 clear_terminal();
                 printf("\n");
                 ascii_wishlistclear();
                 WISHLIST_CLEAR();
             }
-            else if(isEqual(command2, "WISHLIST SHOW") || isEqual(command, "16")){
+            else if(isEqual(command2, "WISHLIST SHOW") || isEqual(command, "15")){
                 clear_terminal();
                 printf("\n");
                 ascii_wishlistshow();
                 WISHLIST_SHOW();
             }
-            else if(isEqual(command2, "WISHLIST SWAP") || isEqual(command, "17")){
+            else if(isEqual(command2, "WISHLIST SWAP")){
                 clear_terminal();
                 printf("\n");
                 ascii_wishlistswap();
@@ -485,12 +515,12 @@ int main()
                 HISTORY(i);
 
             } 
-            else if(isEqual(command, "LOGOUT") || isEqual(command, "19")){
+            else if(isEqual(command, "LOGOUT") || isEqual(command, "18")){
                 clear_terminal();
                 printf("\n");
                 ascii_logout();
                 LOGOUT();
-            } else if(isEqual(command, "HELP") || isEqual(command, "22")){
+            } else if(isEqual(command, "HELP") || isEqual(command, "21")){
                 clear_terminal();
                 printf("\n");
                 HELP(start, login);
@@ -528,7 +558,7 @@ int main()
                     printf("File tidak terbaca! Nama file harus berakhiran .txt\n");
                 }
             } 
-            else if(isEqual(command, "QUIT") || isEqual(command, "21")){
+            else if(isEqual(command, "QUIT") || isEqual(command, "20")){
             clear_terminal();
             printf("\n");
             ascii_quit();

@@ -52,7 +52,7 @@ void PROFILE() {
         printf("Apa yang ingin Anda edit?\n");
         printf("1. Nickname\n");
         printf("2. Umur\n");
-        printf("3. Nama\n");
+        printf("3. Username\n");
         printf(">>> ");
         RESETWORD();
         STARTWORD2(); 
@@ -90,12 +90,12 @@ void PROFILE() {
             user->umur = wordToInt(currentWord);
             printf("Umur Anda berhasil diperbarui menjadi: %d\n", user->umur);
         }
-        else if (isEqual(currentWord.TabWord, "Nama") || isEqual(currentWord.TabWord, "3")) {
-            printf("Masukkan nama baru: ");
+        else if (isEqual(currentWord.TabWord, "Username") || isEqual(currentWord.TabWord, "3")) {
+            printf("Masukkan Username baru: ");
             RESETWORD();
             STARTWORD2();
             if (currentWord.Length == 0 || currentWord.Length >= MAX_LEN) {
-                printf("Nama tidak valid.\n");
+                printf("Username tidak valid.\n");
                 return;
             }
             int i = 0;
