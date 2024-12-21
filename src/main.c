@@ -371,7 +371,6 @@ int main()
                 ascii_cartremove();
                 char name[100],temp[100]; 
                 int jumlah,index3=index2,space=0;
-                printf("%s",command2);
 
                 while (currentWord.TabWord[index2]!= '\0')
                 {

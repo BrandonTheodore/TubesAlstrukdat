@@ -19,33 +19,29 @@ void SAVE(char txt[50]) {
     
     file = fopen(path, "w");
     
-    // Save store items
     fprintf(file, "%d\n", AD.Neff);
     for(int i = 0; i < AD.Neff; i++) {
         fprintf(file, "%d %s\n", AD.A[i].price, AD.A[i].name);
     }
     
-    // Save users
     fprintf(file, "%d\n", userList.Neff);
     for(int i = 0; i < userList.Neff; i++) {
-        // Save user basic info
-        fprintf(file, "\n%s %s %d %s %d\n", 
+        fprintf(file, "%d %s %s %s\n", 
+            userList.A[i].money,
             userList.A[i].name,
             userList.A[i].password,
-            userList.A[i].money,
-            userList.A[i].nickname,
-            userList.A[i].umur
+            userList.A[i].nickname
         );
+
+        fprintf(file, "%d\n", userList.A[i].umur);
         
-        // Save purchase history
         fprintf(file, "%d\n", userList.A[i].riwayat_pembelian.Top + 1);
-        for(int j = 0; j < userList.A[i].riwayat_pembelian.Top+1; j++) {
-            fprintf(file, "%s %d\n",
-                userList.A[i].riwayat_pembelian.T[j].namaBarang,
-                userList.A[i].riwayat_pembelian.T[j].totalHarga);
+        for(int j = 0; j <= userList.A[i].riwayat_pembelian.Top; j++) {
+            fprintf(file, "%d %s\n",
+                userList.A[i].riwayat_pembelian.T[j].totalHarga,
+                userList.A[i].riwayat_pembelian.T[j].namaBarang);
         }
         
-        // Save wishlist
         int wishlistCount = NbElmtLinier(userList.A[i].wishlist);
         fprintf(file, "%d\n", wishlistCount);
         address_list P = First(userList.A[i].wishlist);

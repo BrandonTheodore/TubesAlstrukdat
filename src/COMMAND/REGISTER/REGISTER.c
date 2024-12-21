@@ -25,8 +25,6 @@ void REGISTER(){
             (&currentWord)->TabWord[j] = '\0';
             j++;
         }
-        printf("%s",pass);
-        printf("%s",nama);
         pass[j] = '\0';
         int money = 0;
         int umur = 0;

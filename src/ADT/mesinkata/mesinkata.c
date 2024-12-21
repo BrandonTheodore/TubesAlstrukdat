@@ -184,16 +184,38 @@ int strlength(char* str) {
     return len;
 }
 
+// void baca_line() {
+//     IgnoreCRLF();
+//     int i = 0;
+//     while(currentChar != '\n'){
+//         currentWord.TabWord[i] = currentChar;
+//         adv_baris();
+//         i++;
+//     }
+//     currentWord.TabWord[i] = '\0';
+//     currentWord.Length = i;
+// }
+
 void baca_line() {
     IgnoreCRLF();
     int i = 0;
-    while(currentChar != '\n'){
+    currentWord.Length = 0;
+    
+    // Read until newline or EOF
+    while (currentChar != '\n' && !EOP && i < NMax) {
         currentWord.TabWord[i] = currentChar;
-        adv_baris();
+        currentWord.Length++;
         i++;
+        adv_baris();
     }
+    
+    // Handle newline if present
+    if (currentChar == '\n' && !EOP) {
+        adv_baris();
+    }
+    
+    // Properly terminate string
     currentWord.TabWord[i] = '\0';
-    currentWord.Length = i;
 }
 
 void ADVWORD2() {
