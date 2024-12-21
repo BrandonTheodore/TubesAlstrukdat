@@ -36,7 +36,7 @@ void CART_PAY() {
     RESETWORD();
     STARTWORD2();
 
-    if (isEqual(currentWord.TabWord, "Ya") || isEqual(currentWord.TabWord, "ya")) 
+    if (isEqual(currentWord.TabWord, "Ya") || isEqual(currentWord.TabWord, "ya") || isEqual(currentWord.TabWord, "YA"))
     {
         if (user->money >= totalCost) 
         {
@@ -62,12 +62,6 @@ void CART_PAY() {
             purchase.totalHarga = makstotal;
             PushStack(&user->riwayat_pembelian, purchase);
 
-            for (int i = 0; i < user->keranjang.Count; i++) {
-                char itemName[100]; strcopy(user->keranjang.Elements[i].Key, itemName);
-                int quantity = user->keranjang.Elements[i].Value;
-                int price = AD.A[SearchArrayDin(AD, itemName)].price;
-                int itemTotal = quantity * price;
-            }
             CreateEmptyMap(&user->keranjang);
             printf("\nSelamat kamu telah membeli barang-barang tersebut!\n");
         } 
@@ -77,7 +71,7 @@ void CART_PAY() {
         }
     } 
 
-    else if (isEqual(currentWord.TabWord, "Tidak") || isEqual(currentWord.TabWord, "tidak")) {
+    else if (isEqual(currentWord.TabWord, "Tidak") || isEqual(currentWord.TabWord, "tidak") || isEqual(currentWord.TabWord, "TIDAK")) {
         return;
     } 
     

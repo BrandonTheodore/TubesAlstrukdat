@@ -301,16 +301,16 @@ int main()
                 printf("\n");
                 ascii_work();
                 main_work();
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
             }
         
             else if(isEqual(command2, "WORK CHALLENGE") || isEqual(command, "2")){
                 clear_terminal();
                 printf("\n");
                 ascii_workchallenge();
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
                 selectChallenge(); 
-                printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
+                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
             }
             else if(isEqual(command2, "STORE LIST") || isEqual(command, "3")){
                 clear_terminal();
@@ -438,6 +438,7 @@ int main()
                 printf("\n");
                 ascii_cartpay();
                 CART_PAY();
+                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
             }
             else if(isEqual(command2, "PROFILE") || isEqual(command, "11")){
                 clear_terminal();
@@ -490,9 +491,9 @@ int main()
                 int i, j;
                 char temp[100]; 
                 int index3 = 0;
-                index2 = 0; // Reset index2
+                index2 = 0; 
 
-                // Skip "WISHLIST" and "SWAP"
+
                 while (currentWord.TabWord[index2] != '\0' && currentWord.TabWord[index2] != ' ') {
                     index2++;
                 }
@@ -506,19 +507,16 @@ int main()
                     index2++;
                 }
 
-                // Get first number
                 while (currentWord.TabWord[index2] >= '0' && currentWord.TabWord[index2] <= '9') {
                     temp[index3++] = currentWord.TabWord[index2++];
                 }
                 temp[index3] = '\0';
                 stringtoint(temp, &i);
 
-                // Skip spaces between numbers
                 while (currentWord.TabWord[index2] == ' ') {
                     index2++;
                 }
 
-                // Get second number
                 index3 = 0;
                 while (currentWord.TabWord[index2] >= '0' && currentWord.TabWord[index2] <= '9') {
                     temp[index3++] = currentWord.TabWord[index2++];

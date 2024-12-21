@@ -3,12 +3,6 @@
 
 Queue queue;
 ArrayDin AD;
-/* Inisialisasi Store */
-// void InitStore(Store *S) {
-//     // Inisialisasi daftar barang di toko
-//     *S = (Store){MakeList(), {IDX_UNDEF, IDX_UNDEF}};
-//     CreateQueue(&(S->requestedItems));
-// }
 
 /* Mengecek apakah barang dengan nama tertentu sudah ada di toko */
 boolean IsItemInStore(ArrayDin S, char itemName[MAX_LEN]) {

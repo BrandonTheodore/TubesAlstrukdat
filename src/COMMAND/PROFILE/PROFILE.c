@@ -61,7 +61,7 @@ void PROFILE() {
             printf("Pilihan tidak valid.\n");
             return;
         }
-        else if (isEqual(currentWord.TabWord, "Nickname") || isEqual(currentWord.TabWord, "1")) {
+        else if (isEqual(currentWord.TabWord, "Nickname") || isEqual(currentWord.TabWord, "1") || isEqual(currentWord.TabWord, "nickname") ||  isEqual(currentWord.TabWord, "NICKNAME")) {
             printf("Masukkan nickname baru: ");
             RESETWORD();
             STARTWORD2();
@@ -79,7 +79,7 @@ void PROFILE() {
             user->nickname[i] = '\0';
             printf("Nickname Anda berhasil diperbarui menjadi: %s\n", user->nickname);
         }
-        else if (isEqual(currentWord.TabWord, "Umur") || isEqual(currentWord.TabWord, "2")) {
+        else if (isEqual(currentWord.TabWord, "Umur") || isEqual(currentWord.TabWord, "2") || isEqual(currentWord.TabWord, "umur") || isEqual(currentWord.TabWord, "UMUR")) {
             printf("Masukkan umur baru: ");
             RESETWORD();
             STARTWORD2();
@@ -90,7 +90,7 @@ void PROFILE() {
             user->umur = wordToInt(currentWord);
             printf("Umur Anda berhasil diperbarui menjadi: %d\n", user->umur);
         }
-        else if (isEqual(currentWord.TabWord, "Username") || isEqual(currentWord.TabWord, "3")) {
+        else if (isEqual(currentWord.TabWord, "Username") || isEqual(currentWord.TabWord, "3") || isEqual(currentWord.TabWord, "username") || isEqual(currentWord.TabWord, "USERNAME")) {
             printf("Masukkan Username baru: ");
             RESETWORD();
             STARTWORD2();

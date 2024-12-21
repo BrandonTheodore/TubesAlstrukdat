@@ -23,10 +23,13 @@ AK47
 0
 1
 Meong
-6700 matt matt matt
+5340 matt matt matt
 20
-1
+4
 400 bola
+200 AK47
+40 bola
+500 Meong
 2
 bola
 AK47

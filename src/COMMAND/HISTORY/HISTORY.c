@@ -15,12 +15,19 @@ void HISTORY(int n) {
 
     printf("Riwayat pembelian barang: %d\n",n);
     
-    Stack tempStack = user->riwayat_pembelian;
+
+    Stack tempStack;
     Stack dummy;
-    CreateEmptyStack(&dummy);
-    
+    Stack tempCount;
     int ukuran = 0;
-    Stack tempCount = tempStack;
+
+    CreateEmptyStack(&tempStack);
+    CreateEmptyStack(&dummy);
+    CreateEmptyStack(&tempCount); 
+
+    tempStack = user->riwayat_pembelian;
+    tempCount= tempStack;
+
     while (!IsEmptyStack(tempCount)) {
         infotypeStack temp;
         PopStack(&tempCount, &temp);
@@ -30,7 +37,8 @@ void HISTORY(int n) {
     int tampilan;
     if (n > ukuran) {
         tampilan = ukuran;
-    } else {
+    } 
+    else {
         tampilan = n;
     }
     
@@ -41,10 +49,5 @@ void HISTORY(int n) {
         printf("%d. %s (Rp. %d)\n", count, purchase.namaBarang, purchase.totalHarga);
         PushStack(&dummy, purchase);
         count++;
-    }
-    while (!IsEmptyStack(dummy)) {
-        infotypeStack purchase;
-        PopStack(&dummy, &purchase);
-        PushStack(&user->riwayat_pembelian, purchase);
     }
 }

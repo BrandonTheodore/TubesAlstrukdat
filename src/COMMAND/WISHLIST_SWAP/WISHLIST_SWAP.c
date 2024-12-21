@@ -34,5 +34,5 @@ void WISHLIST_SWAP(int i, int j) {
     strcopy(Info(Q), Info(P));  
     strcopy(temp, Info(Q));      
 
-    printf("Berhasil menukar posisi %s dengan %s pada wishlist!\n", i, j);
+    printf("Berhasil menukar posisi %s dengan %s pada wishlist!\n", Info(P), Info(Q));
 }

@@ -9,9 +9,19 @@ void playGuessingGame() {
     int reward = REWARD_TA;
     boolean validInput;
 
-    printf("\n                                 |*********!Selamat datang di permainan Tebak Angka!*********|\n");
-    printf("                                 |********!Anda memiliki %d kesempatan untuk menebak!********|\n", MAX_ATTEMPTS_T);
-    printf("                                 |Hadiah awal: %d rupiah (berkurang %d setiap tebakan salah)|\n\n", REWARD_TA, R_PENGURANGAN);
+    printf("\n");
+    printf("                                                 ****************************************************************************\n");
+    printf("                                                 *                                                                          *\n");
+    printf("                                                 *                   Selamat Datang di Permainan Tebak Angka!               *\n");
+    printf("                                                 *                                                                          *\n");
+    printf("                                                 ****************************************************************************\n");
+    printf("                                                 *                                                                          *\n");
+    printf("                                                 *              Anda memiliki %d kesempatan untuk menebak!                  *\n", MAX_ATTEMPTS_T);
+    printf("                                                 *              Hadiah awal: %d rupiah                                     *\n", REWARD_TA);
+    printf("                                                 *              (Berkurang %d setiap tebakan salah)                         *\n", R_PENGURANGAN);
+    printf("                                                 *                                                                          *\n");
+    printf("                                                 ****************************************************************************\n");
+    printf("\n");
 
     while (attempts < MAX_ATTEMPTS_T) {
         printf("Kesempatan tersisa: %d\n", MAX_ATTEMPTS_T - attempts);

@@ -53,12 +53,12 @@ void STORE_SUPPLY() {
                 printf("%s dengan harga %d telah ditambahkan ke toko.\n", barang.name, harga);
             }
 
-        } else if (isEqual(command, "Tunda") || isEqual(command, "tunda")) {
+        } else if (isEqual(command, "Tunda") || isEqual(command, "tunda") || isEqual(command, "TUNDA")) {
             // Kembalikan barang ke antrian
             enqueue(&queue, barang);
             printf("%s dikembalikan ke antrian.\n", barang.name);
 
-        } else if (isEqual(command, "Tolak") || isEqual(command, "tolak")) {
+        } else if (isEqual(command, "Tolak") || isEqual(command, "tolak") || isEqual(command, "TOLAK")) {
             // Hapus barang dari antrian
             printf("%s dihapuskan dari antrian.\n", barang.name);
 
