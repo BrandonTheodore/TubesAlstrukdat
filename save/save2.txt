@@ -1,10 +1,9 @@
-5
+4
 10 AK47
 20 Lalabu
 20 pistol
 500 Meong
-100 bola
-4
+3
 100 user1 alstrukdatkeren matt 
 18
 7
@@ -24,10 +23,6 @@ AK47
 1
 Meong
 7100 matt matt matt
-0
-0
-0
-4000 kingpyn Kingpino 
 0
 0
 0

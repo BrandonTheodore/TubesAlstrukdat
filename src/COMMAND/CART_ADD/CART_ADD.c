@@ -2,18 +2,12 @@
 #include "cart_add.h"
 
 void CART_ADD(char *itemName, int quantity) {
-    if (quantity == -1) {
-        printf("Masukkan jumlah barang yang ingin ditambahkan!\n");
-        return;
-    }
-
     if (quantity == 0) {
         printf("Jumlah barang tidak boleh 0!\n");
         return;
     }
 
     User *user = &userList.A[IDX];
-    
     int idx = SearchArrayDin(AD, itemName);
 
     if (idx == -1) {

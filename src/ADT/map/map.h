@@ -3,12 +3,11 @@
 
 #include "../boolean.h"
 #include "../mesinkata/mesinkata.h"
-#include "../dynamiclist/dynamiclist.h" 
-
+// Constants
 #define NilMap 0
 #define MaxElMap 100
 
-
+// Type Definitions
 typedef char* keytype;
 typedef int valuetype;
 typedef int address_map;

@@ -36,31 +36,19 @@ void CART_PAY() {
     RESETWORD();
     STARTWORD2();
 
-    if (isEqual(currentWord.TabWord, "Ya") || isEqual(currentWord.TabWord, "ya")) 
-    {
-        if (user->money >= totalCost) 
-        {
+    if (isEqual(currentWord.TabWord, "Ya")) {
+        if (user->money >= totalCost) {
             user->money -= totalCost;
 
-            int makstotal = 0;
-            int indeksmaks = 0;
-            for (int i = 0; i < user->keranjang.Count; i++) 
-            {
-                char* itemName = user->keranjang.Elements[i].Key;
-                int quantity = user->keranjang.Elements[i].Value;
-                int price = AD.A[SearchArrayDin(AD, itemName)].price;
-                int total = quantity * price;
-                
-                if (total > makstotal || (total == makstotal && strcmp(itemName, user->keranjang.Elements[indeksmaks].Key) > 0)) {
-                    makstotal = total;
-                    indeksmaks = i;
-                }
-            }
+            int m = idxMaxValueMap(user->keranjang);
             infotypeStack purchase;
-            purchase.namaBarang = (char*)malloc(MAX_LEN * sizeof(char));
-            strcopy(user->keranjang.Elements[indeksmaks].Key, purchase.namaBarang);
-            purchase.totalHarga = makstotal;
+            char b[MAX_LEN];
+            strcopy(user->keranjang.Elements[m].Key, b);
+            purchase.namaBarang = (char*)malloc((strlength(b) + 1) * sizeof(char));
+            strcopy(user->keranjang.Elements[m].Key, purchase.namaBarang);
+            purchase.totalHarga = user->keranjang.Elements[m].Value * AD.A[SearchArrayDin(AD,b)].price;
             PushStack(&user->riwayat_pembelian, purchase);
+
 
             for (int i = 0; i < user->keranjang.Count; i++) {
                 char itemName[100]; strcopy(user->keranjang.Elements[i].Key, itemName);
@@ -70,18 +58,12 @@ void CART_PAY() {
             }
             CreateEmptyMap(&user->keranjang);
             printf("\nSelamat kamu telah membeli barang-barang tersebut!\n");
-        } 
-        
-        else {
+        } else {
             printf("\nUang kamu hanya %d, tidak cukup untuk membeli keranjang!\n", user->money);
         }
-    } 
-
-    else if (isEqual(currentWord.TabWord, "Tidak") || isEqual(currentWord.TabWord, "tidak")) {
+    } else if (isEqual(currentWord.TabWord, "Tidak")) {
         return;
-    } 
-    
-    else {
+    } else {
         printf("Input tidak valid.\n");
     }
 }

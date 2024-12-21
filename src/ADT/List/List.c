@@ -40,27 +40,21 @@ boolean IsIdxEff(List L, int i) {
     return (i >= FirstIdx(L) && i <= LastIdx(L));
 }
 
-boolean Search(List L, char name[], int *index) {
-    boolean found = false;
-    int i = 0;
-    
-    while (i < L.Neff && !found) {
-        if (strlength(L.A[i].name) == strlength(name)) {
-            boolean match = true;
-            for (int j = 0; j < strlength(name); j++) {
-                if (L.A[i].name[j] != name[j]) {
-                    match = false;
-                    break;
-                }
-            }
-            if (match) {
-                found = true;
-                *index = i;
+boolean Search(List L, char X[MAX_LEN], int* idx) {
+    boolean cek = false;
+    for (int i = 0; i <= LastIdx(L); i++) {
+        cek = true;
+        for (int j = 0; L.A[i].name[j] != Mark; j++) {
+            if (L.A[i].name[j] != X[j]) {
+                cek = false;
             }
         }
-        i++;
+        if (cek) {
+            *idx = i;
+            return cek;
+        }
     }
-    return found;
+    return cek;
 }
 
 void InsertLast(List *userlist, User user) {
