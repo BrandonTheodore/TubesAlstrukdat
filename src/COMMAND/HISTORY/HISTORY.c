@@ -3,8 +3,6 @@
 
 void HISTORY(int n) {
     User *user = &userList.A[IDX];
-
-    // Check empty stack
     if (IsEmptyStack(user->riwayat_pembelian)) {
         printf("Kamu belum membeli barang apapun!\n");
         return;
@@ -15,9 +13,12 @@ void HISTORY(int n) {
         return;
     }
 
-    printf("Riwayat pembelian barang:\n");
+    printf("Riwayat pembelian barang: %d\n",n);
     
     Stack tempStack = user->riwayat_pembelian;
+    Stack dummy;
+    CreateEmptyStack(&dummy);
+    
     int ukuran = 0;
     Stack tempCount = tempStack;
     while (!IsEmptyStack(tempCount)) {
@@ -36,10 +37,14 @@ void HISTORY(int n) {
     int count = 1;
     while (!IsEmptyStack(tempStack) && count <= tampilan) {
         infotypeStack purchase;
-        purchase.namaBarang = (char*)malloc((strlength(InfoTop(tempStack).namaBarang) + 1) * sizeof(char));
         PopStack(&tempStack, &purchase);
-        printf("%d. %s\n", count, purchase.namaBarang);
-        free(purchase.namaBarang);
+        printf("%d. %s (Rp. %d)\n", count, purchase.namaBarang, purchase.totalHarga);
+        PushStack(&dummy, purchase);
         count++;
+    }
+    while (!IsEmptyStack(dummy)) {
+        infotypeStack purchase;
+        PopStack(&dummy, &purchase);
+        PushStack(&user->riwayat_pembelian, purchase);
     }
 }

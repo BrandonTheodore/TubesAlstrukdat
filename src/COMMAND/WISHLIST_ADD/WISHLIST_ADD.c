@@ -17,14 +17,12 @@ void WISHLIST_ADD() {
         return;
     }
 
-    // Check if item already in wishlist
     address_list P = SearchLinier(user->wishlist, itemName);
     if (P != NilList) {
         printf("%s sudah ada di wishlist!\n", itemName);
         return;
     }
 
-    // Add to wishlist
     InsVLastLinier(&user->wishlist, itemName);
     printf("Berhasil menambahkan %s ke wishlist!\n", itemName);
 }

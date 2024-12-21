@@ -26,7 +26,7 @@ void STORE_SUPPLY() {
         (&currentWord)->TabWord[i] = '\0';
 
         // Evaluasi keputusan pengguna
-        if (isEqual(command, "Terima")) {
+        if (isEqual(command, "Terima") || isEqual(command, "terima")) {
             // Validasi harga barang
             printf("Harga barang: ");
             STARTWORD2();
@@ -53,12 +53,12 @@ void STORE_SUPPLY() {
                 printf("%s dengan harga %d telah ditambahkan ke toko.\n", barang.name, harga);
             }
 
-        } else if (isEqual(command, "Tunda")) {
+        } else if (isEqual(command, "Tunda") || isEqual(command, "tunda")) {
             // Kembalikan barang ke antrian
             enqueue(&queue, barang);
             printf("%s dikembalikan ke antrian.\n", barang.name);
 
-        } else if (isEqual(command, "Tolak")) {
+        } else if (isEqual(command, "Tolak") || isEqual(command, "tolak")) {
             // Hapus barang dari antrian
             printf("%s dihapuskan dari antrian.\n", barang.name);
 

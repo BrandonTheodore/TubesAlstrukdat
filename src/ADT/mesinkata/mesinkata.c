@@ -89,22 +89,17 @@ void CopyWord()
 boolean isEndWord() {
     return endWord;
 }
-
 boolean isEqual(char x[100], char y[100]) {
-    int lenX = len(x);
-    int lenY = len(y);
+    int i = 0;
     
-    if (lenX != lenY) {
-        return false;
-    }
-    
-    for (int i = 0; i < lenX; i++) {
+    while (x[i] != '\0' && y[i] != '\0') {
         if (x[i] != y[i]) {
-            return false; 
+            return false;
         }
+        i++;
     }
     
-    return true;  
+    return (x[i] == '\0' && y[i] == '\0');
 }
 
 void STARTWORD2() {
@@ -186,24 +181,12 @@ int strlength(char* str) {
     return len;
 }
 
-// void baca_line() {
-//     IgnoreCRLF();
-//     int i = 0;
-//     while(currentChar != '\n'){
-//         currentWord.TabWord[i] = currentChar;
-//         adv_baris();
-//         i++;
-//     }
-//     currentWord.TabWord[i] = '\0';
-//     currentWord.Length = i;
-// }
 
 void baca_line() {
     IgnoreCRLF();
     int i = 0;
     currentWord.Length = 0;
-    
-    // Read until newline or EOF
+
     while (currentChar != '\n' && !EOP && i < NMax) {
         currentWord.TabWord[i] = currentChar;
         currentWord.Length++;
@@ -211,12 +194,10 @@ void baca_line() {
         adv_baris();
     }
     
-    // Handle newline if present
     if (currentChar == '\n' && !EOP) {
         adv_baris();
     }
-    
-    // Properly terminate string
+
     currentWord.TabWord[i] = '\0';
 }
 

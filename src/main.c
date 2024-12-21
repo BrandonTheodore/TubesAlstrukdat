@@ -487,34 +487,80 @@ int main()
                 clear_terminal();
                 printf("\n");
                 ascii_wishlistswap();
-                int i,j;char temp[100]; int index3=0;
-                while (currentWord.TabWord[index2]!=' ')
-                {
-                    temp[index3++]=currentWord.TabWord[index2++];
+                int i, j;
+                char temp[100]; 
+                int index3 = 0;
+                index2 = 0; // Reset index2
+
+                // Skip "WISHLIST" and "SWAP"
+                while (currentWord.TabWord[index2] != '\0' && currentWord.TabWord[index2] != ' ') {
+                    index2++;
                 }
-                temp[index3]='\0'; stringtoint(temp,&i); index2++;
-                index3=0;
-                while (currentWord.TabWord[index2]!='\0')
-                {
-                    temp[index3++]=currentWord.TabWord[index2++];
+                while (currentWord.TabWord[index2] == ' ') {
+                    index2++;
                 }
-                temp[index3]='\0'; stringtoint(temp,&j);
-                WISHLIST_SWAP(i,j);
+                while (currentWord.TabWord[index2] != '\0' && currentWord.TabWord[index2] != ' ') {
+                    index2++;
+                }
+                while (currentWord.TabWord[index2] == ' ') {
+                    index2++;
+                }
+
+                // Get first number
+                while (currentWord.TabWord[index2] >= '0' && currentWord.TabWord[index2] <= '9') {
+                    temp[index3++] = currentWord.TabWord[index2++];
+                }
+                temp[index3] = '\0';
+                stringtoint(temp, &i);
+
+                // Skip spaces between numbers
+                while (currentWord.TabWord[index2] == ' ') {
+                    index2++;
+                }
+
+                // Get second number
+                index3 = 0;
+                while (currentWord.TabWord[index2] >= '0' && currentWord.TabWord[index2] <= '9') {
+                    temp[index3++] = currentWord.TabWord[index2++];
+                }
+                temp[index3] = '\0';
+                stringtoint(temp, &j);
+
+                printf("Swapping positions %d and %d\n", i, j);
+                WISHLIST_SWAP(i, j);
             }
             else if(isEqual(command, "HISTORY")){
                 clear_terminal();
                 printf("\n");
                 ascii_history();
-                int i,index3=0;char temp[100];
-                while (currentWord.TabWord[index2]!='\0')
-                {
-                    temp[index3++]=currentWord.TabWord[index2++];
-                }
-                temp[index3]='\0';
-                stringtoint(temp,&i);
-                HISTORY(i);
 
-            } 
+                char temp[100];
+                int i = -1;
+                int index3 = 0;
+                index2 =0;
+
+                while (currentWord.TabWord[index2] != '\0' && currentWord.TabWord[index2] != ' ') {
+                    index2++;
+                }
+
+                while (currentWord.TabWord[index2] == ' ') {
+                    index2++;
+                }
+
+                while (currentWord.TabWord[index2] != '\0') {
+                    if (currentWord.TabWord[index2] >= '0' && currentWord.TabWord[index2] <= '9') {
+                        temp[index3++] = currentWord.TabWord[index2];
+                    }
+                    index2++;
+                }
+
+                if (index3 > 0) {
+                    temp[index3] = '\0';
+                    stringtoint(temp, &i);
+                }
+
+                HISTORY(i);
+            }
             else if(isEqual(command, "LOGOUT") || isEqual(command, "18")){
                 clear_terminal();
                 printf("\n");

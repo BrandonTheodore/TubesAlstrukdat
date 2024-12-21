@@ -17,18 +17,22 @@ void WISHLIST_SWAP(int i, int j) {
     address_list P = First(user->wishlist);
     address_list Q = First(user->wishlist);
 
-    for (int idx = 1; idx < i; idx++) {
+    for (int idx = 1; idx < i && P != NilList; idx++) {
         P = Next(P);
     }
-    
-    for (int idx = 1; idx < j; idx++) {
+    for (int idx = 1; idx < j && Q != NilList; idx++) {
         Q = Next(Q);
     }
 
-    char tempItem[MAX_LEN];
-    strcopy(tempItem, Info(P));
-    strcopy(Info(P), Info(Q));
-    strcopy(Info(Q), tempItem);
+    if (P == NilList || Q == NilList) {
+        printf("Posisi tidak valid!\n");
+        return;
+    }
 
-    printf("Berhasil menukar posisi %s dengan %s pada wishlist!\n", Info(Q), Info(P));
+    char temp[MAX_LEN];
+    strcopy(Info(P), temp);   
+    strcopy(Info(Q), Info(P));  
+    strcopy(temp, Info(Q));      
+
+    printf("Berhasil menukar posisi %s dengan %s pada wishlist!\n", i, j);
 }
