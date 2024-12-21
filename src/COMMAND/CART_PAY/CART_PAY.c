@@ -42,7 +42,8 @@ void CART_PAY() {
 
             int m = idxMaxValueMap(user->keranjang);
             infotypeStack purchase;
-            char b = user->keranjang.Elements[m].Key;
+            char b[MAX_LEN];
+            strcopy(user->keranjang.Elements[m].Key, b);
             purchase.namaBarang = (char*)malloc((strlength(b) + 1) * sizeof(char));
             strcopy(user->keranjang.Elements[m].Key, purchase.namaBarang);
             purchase.totalHarga = user->keranjang.Elements[m].Value * AD.A[SearchArrayDin(AD,b)].price;

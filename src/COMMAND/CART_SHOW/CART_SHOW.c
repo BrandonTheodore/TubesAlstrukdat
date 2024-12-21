@@ -14,14 +14,17 @@ void CART_SHOW() {
     printf("Kuantitas  Nama    Total\n");
 
     for (int i = 0; i < user->keranjang.Count; i++) {
-        char* itemName;
+        char itemName[MAX_LEN];  
         strcopy(user->keranjang.Elements[i].Key, itemName);
         int quantity = user->keranjang.Elements[i].Value;
-        int price = AD.A[SearchArrayDin(AD, itemName)].price;
-        int itemTotal = quantity * price;
-        
-        printf("%-10d %-7s %d\n", quantity, itemName, itemTotal);
-        totalCost += itemTotal;
+        int idx = SearchArrayDin(AD, itemName);
+        if (idx != -1) {  
+            int price = AD.A[idx].price;
+            int itemTotal = quantity * price;
+            
+            printf("%-10d %-7s %d\n", quantity, itemName, itemTotal);
+            totalCost += itemTotal;
+        }
     }
 
     printf("Total biaya yang harus dikeluarkan adalah %d.\n", totalCost);

@@ -1,23 +1,25 @@
 4
 10 AK47
 20 Lalabu
-20 KONTOL
+20 pistol
 500 Meong
 2
-100 user1 alstrukdatkeren matt
+100 user1 alstrukdatkeren matt 
 18
-6
-40 AK47
-100 AK47
-35 Lalabu
-10 AK47
-500 Meong
-20 KONTOL
+7
+40 AK47 
+100 AK47 
+35 Lalabu 
+10 AK47 
+500 Meong 
+20 pistol 
+40 pistol 
 2
-KONTOL
+pistol
 AK47
-25 user2 kerenbangetkak matt
+25 user2 kerenbangetkak matt 
 18
 0
 1
 Meong
+

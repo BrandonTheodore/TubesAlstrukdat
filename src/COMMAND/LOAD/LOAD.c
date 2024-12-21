@@ -28,8 +28,6 @@ void LOAD(char txt[50]){
         start = true;
         load = true;
 
-
-        // Read store items
         int itemCount;
         baca_line();
         itemCount = wordToInt(currentWord);

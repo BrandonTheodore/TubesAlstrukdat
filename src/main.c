@@ -12,6 +12,14 @@ boolean load;
 int user_id;
 User user;
 
+void clear_terminal() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 int main()
 
 {
@@ -96,9 +104,11 @@ int main()
             command[i] = '\0';
             (&currentWord)->TabWord[i] = '\0';
             if(isEqual(command, "START") || isEqual(command, "1")){
+                clear_terminal();
                 MULAI();
             
             } else if (isEqual(command, "LOAD")) {
+                clear_terminal();
                 i++;
                 int j = i;
                 while(currentWord.TabWord[i] != '\0'){
@@ -110,9 +120,11 @@ int main()
                 LOAD(txt);
                 
             } else if(isEqual(command, "QUIT") || isEqual(command, "3")){
+                clear_terminal();
                 printf("Aplikasi akan ditutup");
                 exit(EXIT_SUCCESS);
             } else if(isEqual(command, "HELP") || isEqual(command, "4")){
+                clear_terminal();
                 printf("\n");
                 HELP(start, login);
                 printf("Ketik apapun untuk kembali ke menu utama\n");
@@ -142,14 +154,18 @@ int main()
             }
             command[i] = '\0';
             if(isEqual(command, "REGISTER") || isEqual(command, "1")){
+                clear_terminal();
                 REGISTER();
             } else if (isEqual(command, "LOGIN") || isEqual(command, "2")) {
+                clear_terminal();  
                 LOGIN();
             } 
             else if (isEqual(command, "PROFILE") || isEqual(command, "3")) {
+                clear_terminal();
                 PROFILE();
             }
             else if(isEqual(command, "QUIT") || isEqual(command, "4")){
+                clear_terminal();
                 printf("Apakah kamu ingin menyimpan file? (Y/N)\n");
                 printf(">>> ");
                 STARTWORD2();
@@ -198,6 +214,7 @@ int main()
                 exit(EXIT_SUCCESS);
 
             } else if(isEqual(command, "HELP") || isEqual(command, "5")){
+                clear_terminal();   
                 HELP(start, login);
                 printf("Ketik apapun untuk kembali ke menu utama\n");
                 printf(">>> ");
@@ -213,7 +230,7 @@ int main()
         {
             printf("\n");
             printf("=========================================================\n");
-            printf("|                       MENU OPTIONS                      |\n");
+            printf("|                       MENU OPTIONS                     |\n");
             printf("=========================================================\n");
             printf("|  1. WORK                                               |\n");
             printf("|  2. WORK CHALLENGE                                     |\n");
@@ -227,17 +244,16 @@ int main()
             printf("| 10. CART PAY                                           |\n");
             printf("| 11. PROFILE                                            |\n");
             printf("| 12. WISHLIST ADD                                       |\n");
-            printf("| 13. WISHLIST REMOVE 1                                  |\n");
-            printf("| 14. WISHLIST REMOVE 2                                  |\n");
-            printf("| 15. WISHLIST CLEAR                                     |\n");
-            printf("| 16. WISHLIST SHOW                                      |\n");
-            printf("| 17. WISHLIST SWAP                                      |\n");
-            printf("| 18. HISTORY                                            |\n");
-            printf("| 19. LOGOUT                                             |\n");
-            printf("| 20. SAVE                                               |\n");
-            printf("| 21. QUIT                                               |\n");
-            printf("| 22. HELP                                               |\n");
-            printf("===========================================================\n");
+            printf("| 13. WISHLIST REMOVE                                    |\n");
+            printf("| 14. WISHLIST CLEAR                                     |\n");
+            printf("| 15. WISHLIST SHOW                                      |\n");
+            printf("| 16. WISHLIST SWAP                                      |\n");
+            printf("| 17. HISTORY                                            |\n");
+            printf("| 18. LOGOUT                                             |\n");
+            printf("| 19. SAVE                                               |\n");
+            printf("| 20. QUIT                                               |\n");
+            printf("| 21. HELP                                               |\n");
+            printf("==========================================================\n");
             printf(">>> ");
             STARTWORD2();
 
@@ -277,6 +293,7 @@ int main()
             index2++;
 
             if (isEqual(command, "WORK") || isEqual(command, "1")) {
+                clear_terminal();
                 printf("\n");
                 ascii_work();
                 main_work();
@@ -284,6 +301,7 @@ int main()
             }
         
             else if(isEqual(command2, "WORK CHALLENGE") || isEqual(command, "2")){
+                clear_terminal();
                 printf("\n");
                 ascii_workchallenge();
                 printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
@@ -291,27 +309,32 @@ int main()
                 printf("saldo anda sekarang adalah: %d rupiah\n",user.money);
             }
             else if(isEqual(command2, "STORE LIST") || isEqual(command, "3")){
+                clear_terminal();
                 printf("\n");
                 ascii_storelist();
                 STORE_LIST();
             }
             else if(isEqual(command2, "STORE REQUEST") || isEqual(command, "4")){
+                clear_terminal();
                 printf("\n");
                 ascii_storerequest();
                 STORE_REQUEST();
             }
             else if(isEqual(command2, "STORE SUPPLY") || isEqual(command, "5")){
+                clear_terminal();
                 printf("\n");
                 ascii_storesupply();
                 STORE_SUPPLY();
             }
             else if(isEqual(command2, "STORE REMOVE") || isEqual(command, "6")){
+                clear_terminal();
                 printf("\n");
                 ascii_storeremove();
                 STORE_REMOVE();
             }
             else if (isEqual(command2, "CART ADD")) 
             {
+                clear_terminal();
                 printf("\n");
                 ascii_cartadd();
                 char name[100],temp[100]; 
@@ -343,6 +366,7 @@ int main()
             }
 
             else if (isEqual(command2, "CART REMOVE")) {
+                clear_terminal();
                 printf("\n");
                 ascii_cartremove();
                 char name[100],temp[100]; 
@@ -375,31 +399,37 @@ int main()
             }
             
             else if(isEqual(command2, "CART SHOW") || isEqual(command, "9")){
+                clear_terminal();
                 printf("\n");
                 ascii_cartshow();
                 CART_SHOW();
             }
             else if(isEqual(command2, "CART PAY") || isEqual(command, "10")){
+                clear_terminal();  
                 printf("\n");
                 ascii_cartpay();
                 CART_PAY();
             }
             else if(isEqual(command2, "PROFILE") || isEqual(command, "11")){
+                clear_terminal();
                 printf("\n");
                 ascii_profile();
                 PROFILE();
             }
             else if(isEqual(command2, "WISHLIST ADD") || isEqual(command, "12")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistadd();
                 WISHLIST_ADD();
             }
-            else if(isEqual(command3, "WISHLIST REMOVE") || isEqual(command, "14")){
+            else if(isEqual(command3, "WISHLIST REMOVE")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistremove1();
                 WISHLIST_REMOVE_2();
             }
-            else if(isEqual(command2, "WISHLIST REMOVE") || isEqual(command, "13")){
+            else if(isEqual(command2, "WISHLIST REMOVE")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistremove1();
                 int i,index3=0;char temp[100];
@@ -413,16 +443,19 @@ int main()
                 WISHLIST_REMOVE_1(i);
             }
             else if(isEqual(command2, "WISHLIST CLEAR") || isEqual(command, "15")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistclear();
                 WISHLIST_CLEAR();
             }
             else if(isEqual(command2, "WISHLIST SHOW") || isEqual(command, "16")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistshow();
                 WISHLIST_SHOW();
             }
             else if(isEqual(command2, "WISHLIST SWAP") || isEqual(command, "17")){
+                clear_terminal();
                 printf("\n");
                 ascii_wishlistswap();
                 int i,j;char temp[100]; int index3=0;
@@ -440,6 +473,7 @@ int main()
                 WISHLIST_SWAP(i,j);
             }
             else if(isEqual(command, "HISTORY")){
+                clear_terminal();
                 printf("\n");
                 ascii_history();
                 int i,index3=0;char temp[100];
@@ -453,10 +487,12 @@ int main()
 
             } 
             else if(isEqual(command, "LOGOUT") || isEqual(command, "19")){
+                clear_terminal();
                 printf("\n");
                 ascii_logout();
                 LOGOUT();
             } else if(isEqual(command, "HELP") || isEqual(command, "22")){
+                clear_terminal();
                 printf("\n");
                 HELP(start, login);
                 printf("Ketik apapun untuk kembali ke menu utama\n");
@@ -464,6 +500,7 @@ int main()
                 STARTWORD2();
             }
             else if(isEqual(command, "SAVE")){
+                clear_terminal();
                 printf("\n");
                 ascii_save();
                 char txt[50];
@@ -493,6 +530,7 @@ int main()
                 }
             } 
             else if(isEqual(command, "QUIT") || isEqual(command, "21")){
+            clear_terminal();
             printf("\n");
             ascii_quit();
                 printf("Apakah kamu ingin menyimpan file?(Y/N)\n");

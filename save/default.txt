@@ -4,7 +4,8 @@
 20 Ayam Goreng Crisbar
 500 Meong
 2
-100 user1 alstrukdatkeren
+100 user1 alstrukdatkeren als
+18
 6
 40 AK47
 100 AK47
@@ -15,7 +16,8 @@
 2
 Ayam Goreng Crisbar
 AK47
-25 user2 kerenbangetkak
+25 user2 kerenbangetkak keren
+18
 0
 1
 Meong
