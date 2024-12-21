@@ -59,15 +59,18 @@ int idxMap(Map M, keytype k) {
 
 int idxMaxValueMap(Map M) {
     if (IsEmptyMap(M)) {
-        return -1;  // Return -1 if map is empty
+        return -1;
     }
     
     int maxIdx = 0;
-    valuetype maxValue = M.Elements[0].Value;
+    int maxTotal = M.Elements[0].Value * AD.A[SearchArrayDin(AD, M.Elements[0].Key)].price;
     
     for (int i = 1; i < M.Count; i++) {
-        if (M.Elements[i].Value > maxValue) {
-            maxValue = M.Elements[i].Value;
+        int harga = AD.A[SearchArrayDin(AD, M.Elements[i].Key)].price;
+        int Total = M.Elements[i].Value * harga;
+        
+        if (Total > maxTotal) {
+            maxTotal = Total;
             maxIdx = i;
         }
     }
