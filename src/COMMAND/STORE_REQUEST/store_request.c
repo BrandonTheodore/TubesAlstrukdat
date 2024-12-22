@@ -26,7 +26,6 @@ boolean IsItemInQueue(Queue S, char itemName[MAX_LEN]) {
 
 /* STORE REQUEST */
 void STORE_REQUEST() {
-    CreateQueue(&queue);
     // Membaca input nama barang
     printf("Nama barang yang diminta: ");
     STARTWORD2(); 

@@ -9,6 +9,8 @@
 #define IDX_UNDEF -1
 #define CAPACITY 50
 
+typedef char ElTypeString[100];
+
 /* Definisi elemen dan address */
 typedef struct
 {

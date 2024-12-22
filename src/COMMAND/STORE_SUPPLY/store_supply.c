@@ -10,10 +10,9 @@ void STORE_SUPPLY() {
         printf("Tidak ada barang dalam antrian.\n");
     } else {
         Barang barang;
-        dequeue(&queue, &barang);
 
         // Tampilan
-        printf("Apakah kamu ingin menambahkan barang %s (Terima/Tolak/Tunda): ", barang.name);
+        printf("Apakah kamu ingin menambahkan barang %s (Terima/Tolak/Tunda): ", HEAD(queue).name);
         STARTWORD2();
         char command[50];
         int i = 0;
@@ -26,7 +25,7 @@ void STORE_SUPPLY() {
         (&currentWord)->TabWord[i] = '\0';
 
         // Evaluasi keputusan pengguna
-        if (isEqual(command, "Terima") || isEqual(command, "terima")) {
+        if (isEqual(command, "Terima") || isEqual(command, "terima") || isEqual(command, "TERIMA")) {
             // Validasi harga barang
             printf("Harga barang: ");
             STARTWORD2();
@@ -44,8 +43,10 @@ void STORE_SUPPLY() {
             int harga = atoi(price);
             if (harga <= 0) {
                 printf("Harga tidak valid. Balik ke menu.\n");
+                dequeue(&queue, &barang);
                 enqueue(&queue, barang); // Kembalikan ke antrian
             } else {
+                dequeue(&queue, &barang);
                 // Tambahkan barang ke toko
                 barang.price = harga;
 
@@ -55,17 +56,18 @@ void STORE_SUPPLY() {
 
         } else if (isEqual(command, "Tunda") || isEqual(command, "tunda") || isEqual(command, "TUNDA")) {
             // Kembalikan barang ke antrian
+            dequeue(&queue, &barang);
             enqueue(&queue, barang);
             printf("%s dikembalikan ke antrian.\n", barang.name);
 
         } else if (isEqual(command, "Tolak") || isEqual(command, "tolak") || isEqual(command, "TOLAK")) {
             // Hapus barang dari antrian
+            dequeue(&queue, &barang);
             printf("%s dihapuskan dari antrian.\n", barang.name);
 
         } else {
             // Input tidak valid
             printf("< Balik ke menu >\n");
-            enqueue(&queue, barang);; // Kembalikan barang ke antrian
         }
     }
 }

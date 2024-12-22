@@ -77,6 +77,7 @@ int main()
     printf("\n");
     printf("\n");
     
+    CreateQueue(&queue);
     while(true)
     {    
         if(!start && !login){

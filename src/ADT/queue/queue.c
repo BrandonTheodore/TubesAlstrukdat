@@ -29,41 +29,35 @@ int length(Queue q)
     }
 }
 
-void enqueue(Queue *q, Barang val)
-{
-    if (isFull(*q))
-    {
-        printf("Antrian Penuh!\n");
+void enqueue(Queue *Q, Barang val) {
+    if (isFull(*Q)) {
+        printf("Queue penuh!\n");
+        return;
     }
-    else
-    {
-        if (isEmpty(*q))
-        {
-            IDX_HEAD(*q) = 0;
-        }
-        IDX_TAIL(*q) = (IDX_TAIL(*q) + 1);
-        TAIL(*q) = val;
+
+    if (isEmpty(*Q)) {
+        Q->idxHead = 0;
+        Q->idxTail = 0;
+    } else {
+        Q->idxTail = (Q->idxTail + 1) % CAPACITY;
     }
+    
+    Q->buffer[Q->idxTail] = val;
 }
 
-void dequeue(Queue *q, Barang *val)
-{
-    if (isEmpty(*q))
-    {
-        printf("Antrian kosong!\n");
+void dequeue(Queue *Q, Barang *val) {
+    if (isEmpty(*Q)) {
+        printf("Queue kosong!\n");
+        return;
     }
-    else
-    {
-        *val = HEAD(*q);
-        for(int i = IDX_HEAD(*q); i < IDX_TAIL(*q); i++){
-            (*q).buffer[i] = q->buffer[i + 1];
-        }
-        IDX_TAIL(*q) -= 1;
-        if (IDX_HEAD(*q) == IDX_TAIL(*q))
-        {
-            IDX_HEAD(*q) = IDX_UNDEF;
-            IDX_TAIL(*q) = IDX_UNDEF;
-        }
+
+    *val = Q->buffer[Q->idxHead];
+    
+    if (Q->idxHead == Q->idxTail) {
+        Q->idxHead = IDX_UNDEF;
+        Q->idxTail = IDX_UNDEF;
+    } else {
+        Q->idxHead = (Q->idxHead + 1) % CAPACITY;
     }
 }
 
