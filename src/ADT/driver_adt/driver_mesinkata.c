@@ -8,7 +8,7 @@ void printkata(Word word) {
 }
 
 int main() {
-    // Reset global state at start
+    // Reset 
     RESETWORD();
 
     // Tes stringtoint
@@ -59,7 +59,7 @@ int main() {
     printf("6. Tes wordToInt:\n");
     printf("Word \"123\" ke integer: %d\n\n", wordToInt(num_word));
 
-    // Reset global state before exit
+    // Reset global 
     RESETWORD();
     printf("=== Tes Selesai ===\n");
     return 0;

@@ -2,10 +2,10 @@
 #include "../master_header_adt.h"
 
 int main() {
-    // Reset initial state
+    // Reset 
     reset();
     
-    // Tes START and basic character reading
+    // Tes START 
     printf("1. Tes pembacaan karakter standard:\n");
     printf("Masukkan kalimat (akhiri dengan titik): ");
     START();
@@ -13,7 +13,7 @@ int main() {
         printf("%c", GetCC());
         ADV();
     }
-    reset(); // Reset after Tes
+    reset(); // Reset 
     printf("\n\n");
 
     // Tes start_files
@@ -24,7 +24,7 @@ int main() {
         printf("%c", GetCC());
         ADV();
     }
-    reset(); // Reset after file read
+    reset(); // Reset 
     printf("\n\n");
 
     // Tes reset
@@ -35,7 +35,7 @@ int main() {
         printf("%c", GetCC());
         ADV();
     }
-    reset(); // Reset after Tes
+    reset(); // Reset 
     printf("\n\n");
 
     // Tes IgnoreCRLF

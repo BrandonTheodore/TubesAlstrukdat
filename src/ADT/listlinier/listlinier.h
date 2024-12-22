@@ -5,7 +5,6 @@
 #include "../mesinkata/mesinkata.h"
 #define NilList NULL
 
-// Type Definitions
 typedef char* infotypelist;
 typedef struct tElmtList *address_list;
 typedef struct tElmtList {
@@ -21,7 +20,6 @@ typedef struct {
 #define Info(P) (P->Info)
 #define Next(P) (P->Next)
 
-// Function Prototypes
 boolean IsEmptyLinier(Listlinier L);
 void CreateEmptyLinier(Listlinier *L);
 address_list AlokasiLinier(infotypelist X);
