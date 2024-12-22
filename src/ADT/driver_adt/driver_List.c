@@ -2,19 +2,26 @@
 #include "../master_header_adt.h"
 
 void printlist(List L) {
-    printf("isi list:\n");
-    for (int i = 0; i < L.Neff; i++) {
-        printf("pengguna %d: nama: %s, password: %s, saldo: %d\n", 
-               i+1, L.A[i].name, L.A[i].password, L.A[i].money);
+    if (IsEmpty(L)) {
+        printf("List kosong\n");
+        return;
     }
-    printf("total pengguna: %d\n", L.Neff);
+    printf("Isi list:\n");
+    for (int i = 0; i < L.Neff; i++) {
+        printf("Pengguna %d:\n", i+1);
+        printf("Nama: %s\n", L.A[i].name);
+        printf("Password: %s\n", L.A[i].password);
+        printf("Money: %d\n", L.A[i].money);
+    }
+    printf("Total pengguna: %d\n", L.Neff);
 }
 
 int main() {
     List myList;
+    User user;
     int searchindeks;
 
-    printf("1. Tes MakeList and IsEmpty:\n");
+    printf("1. Tes MakeList dan IsEmpty:\n");
     myList = MakeList();
     if (IsEmpty(myList)) {
         printf("List kosong\n");
@@ -23,54 +30,56 @@ int main() {
     }
 
     printf("\n2. Tes InsertLast:\n");
-    InsertLast(&myList, "bob", "bob123", 1200);
-    InsertLast(&myList, "matt", "hai12", 1500);
-    InsertLast(&myList, "carlen", "char789", 2000);
+    // User 1
+    strcpy(user.name, "bob");
+    strcpy(user.password, "bob123");
+    user.money = 1200;
+    InsertLast(&myList, user);
+
+    // User 2
+    strcpy(user.name, "matt");
+    strcpy(user.password, "matt123");
+    user.money = 1500;
+    InsertLast(&myList, user);
+
+    // User 3
+    strcpy(user.name, "carl");
+    strcpy(user.password, "carl123");
+    user.money = 2000;
+    InsertLast(&myList, user);
+
     printlist(myList);
 
     printf("\n3. Tes Length:\n");
-    printf("panjang: %d\n", Length(myList));
+    printf("Panjang list: %d\n", Length(myList));
 
-    printf("\n4. Tes FirstIdx and LastIdx:\n");
-    printf("First indeks: %d\n", FirstIdx(myList));
-    printf("Last indeks: %d\n", LastIdx(myList));
+    printf("\n4. Tes FirstIdx dan LastIdx:\n");
+    printf("First Index: %d\n", FirstIdx(myList));
+    printf("Last Index: %d\n", LastIdx(myList));
 
-    printf("\n5. Tes IsIdxValid and IsIdxEff:\n");
-
-    if (IsIdxValid(myList, 1)) {
-        printf("indeks 1 valid\n");
-    } else {
-        printf("indeks 1 tidak valid\n");
-    }
-
-    if (IsIdxValid(myList, 100)) {
-        printf("indeks 100 valid\n");
-    } else {
-        printf("indeks 100 tidak valid\n");
-    }
-
-    if (IsIdxEff(myList, 1)) {
-        printf("indeks 1 efektif\n");
-    } else {
-        printf("indeks 1 tidak efektif\n");
-    }
-
-    if (IsIdxEff(myList, 3)) {
-        printf("indeks 3 efektif\n");
-    } else {
-        printf("indeks 3 tidak efektif\n");
-    }
+    printf("\n5. Tes IsIdxValid dan IsIdxEff:\n");
+    printf("Index 1 valid? %s\n", IsIdxValid(myList, 1) ? "Ya" : "Tidak");
+    printf("Index 100 valid? %s\n", IsIdxValid(myList, 100) ? "Ya" : "Tidak");
+    printf("Index 1 efektif? %s\n", IsIdxEff(myList, 1) ? "Ya" : "Tidak");
+    printf("Index 3 efektif? %s\n", IsIdxEff(myList, 3) ? "Ya" : "Tidak");
 
     printf("\n6. Tes Search:\n");
-    if (Search(myList, "Bob", &searchindeks)) {
-        printf("Bob berada pada indeks: %d\n", searchindeks);
+    if (Search(myList, "bob", &searchindeks)) {
+        printf("bob ditemukan pada index: %d\n", searchindeks);
     } else {
-        printf("Bob tidak ditemukan\n");
+        printf("bob tidak ditemukan\n");
     }
-    if (Search(myList, "carlen", &searchindeks)) {
-        printf("carlen berada pada indeks: %d\n", searchindeks);
+
+    if (Search(myList, "carl", &searchindeks)) {
+        printf("carl ditemukan pada index: %d\n", searchindeks);
     } else {
-        printf("carlen tidak ditemukan\n");
+        printf("carl tidak ditemukan\n");
+    }
+
+    if (Search(myList, "john", &searchindeks)) {
+        printf("john ditemukan pada index: %d\n", searchindeks);
+    } else {
+        printf("john tidak ditemukan\n");
     }
 
     return 0;

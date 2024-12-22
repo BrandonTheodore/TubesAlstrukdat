@@ -42,9 +42,15 @@ void HELP(boolean start, boolean login) {
         printf("| 16. {WISHLIST SHOW}     -> Untuk menampilkan isi wishlist                  |\n");
         printf("| 17. {WISHLIST SWAP}     -> Untuk menukar posisi barang di wishlist         |\n");
         printf("| 18. {HISTORY}           -> Untuk melihat riwayat pembelian                 |\n");
-        printf("| 19. {LOGOUT}            -> Untuk keluar dari sesi                          |\n");
-        printf("| 20. {SAVE}              -> Untuk menyimpan state ke dalam file             |\n");
-        printf("| 21. {QUIT}              -> Untuk keluar dari program                       |\n");
+        printf("| 19. {OPTIMASIRUTE}      -> Optimasi Rute Ekspedisi untuk pengiriman barang |\n");
+        printf("|                            menggunakan algoritma yang efisien agar semua   |\n");
+        printf("|                            titik dapat dikunjungi dengan jarak minimum.    |\n");
+        printf("| 20. {GLOBALALIGNMENT}   -> Deteksi Kebocoran Senjata Biologis dengan       |\n");
+        printf("|                            algoritma Needleman-Wunsch untuk mencocokkan    |\n");
+        printf("|                            sekuens DNA dari lingkungan dengan data DNA.    |\n");
+        printf("| 21. {LOGOUT}            -> Untuk keluar dari sesi                          |\n");
+        printf("| 22. {SAVE}              -> Untuk menyimpan state ke dalam file             |\n");
+        printf("| 23. {QUIT}              -> Untuk keluar dari program                       |\n");
         printf("+----------------------------------------------------------------------------+\n");
         }
     } 

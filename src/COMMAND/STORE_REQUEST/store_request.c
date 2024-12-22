@@ -39,6 +39,11 @@ void STORE_REQUEST() {
     command[i] = '\0';
     (&currentWord)->TabWord[i] = '\0';
 
+    if (angka(command)) {
+        printf("Nama barang tidak valid!\n");
+        return;
+    }
+
     // Periksa barang yang sudah ada di toko
     if (IsItemInStore(AD, command)) {
         printf("Barang dengan nama yang sama sudah ada di toko!\n");

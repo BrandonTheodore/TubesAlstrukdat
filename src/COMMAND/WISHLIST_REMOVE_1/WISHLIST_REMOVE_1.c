@@ -4,19 +4,15 @@
 void WISHLIST_REMOVE_1(int pos) {
     User *user = &userList.A[IDX];
 
-    // Check if wishlist is empty
     if (IsEmptyLinier(user->wishlist)) {
         printf("Penghapusan barang WISHLIST gagal dilakukan, WISHLIST kosong!\n");
         return;
     }
-
-    // Check if position is valid
     if (pos < 1 || pos > NbElmtLinier(user->wishlist)) {
         printf("Penghapusan barang WISHLIST gagal dilakukan, Barang ke-%d tidak ada di WISHLIST!\n", pos);
         return;
     }
 
-    // Delete item at position
     address_list P = First(user->wishlist);
     if (pos == 1) {
         DelFirstLinier(&user->wishlist, &P);

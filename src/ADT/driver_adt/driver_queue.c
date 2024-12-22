@@ -5,12 +5,12 @@ int main() {
     Queue q;
     Barang barang;
 
-    // Tes CreateQueue
+    // Test CreateQueue
     printf("Membuat queue kosong\n");
     CreateQueue(&q);
     printf("Queue berhasil dibuat\n\n");
 
-    // Tes isEmpty
+    // Test isEmpty (should be true)
     printf("Apakah queue kosong? ");
     if (isEmpty(q)) {
         printf("Ya\n\n");
@@ -18,27 +18,25 @@ int main() {
         printf("Tidak\n\n");
     }
 
-    // Tes enqueue
+    // Test enqueue
     printf("Menambahkan beberapa barang ke dalam queue\n");
     for (int i = 1; i <= 5; i++) {
-        barang.id = i;
-        sprintf(barang.nama, "barang%d", i);
-        barang.harga = i * 1000;
+        sprintf(barang.name, "Barang%d", i);
+        barang.price = i * 1000;
         enqueue(&q, barang);
-        printf("Menambahkan: ID=%d, Nama=%s, Harga=%d\n", barang.id, barang.nama, barang.harga);
+        printf("Menambahkan: Nama=%s, Harga=%d\n", barang.name, barang.price);
     }
     printf("\n");
 
-    // Tes displayQueue
-    printf("Isi queue sekarang: ");
+    // Test displayQueue
+    printf("Isi queue sekarang:\n");
     displayQueue(q);
-    printf("\n\n");
+    printf("\n");
 
-    // Tes length
+    // Test length
     printf("Panjang queue: %d\n\n", length(q));
 
-
-    // Tes isFull
+    // Test isFull
     printf("Apakah queue penuh? ");
     if (isFull(q)) {
         printf("Ya\n\n");
@@ -46,39 +44,40 @@ int main() {
         printf("Tidak\n\n");
     }
 
-    // Tes dequeue
+    // Test dequeue
     printf("Menghapus beberapa barang dari queue...\n");
     for (int i = 0; i < 3; i++) {
         dequeue(&q, &barang);
-        printf("barang yang dihapus: ID=%d, Nama=%s, Harga=%d\n", barang.id, barang.nama, barang.harga);
+        printf("Barang yang dihapus: Nama=%s, Harga=%d\n", barang.name, barang.price);
     }
     printf("\n");
 
-    // Display queue setelah dequeue
-    printf("Isi queue setelah penghapusan: ");
+    // Display queue after dequeue
+    printf("Isi queue setelah penghapusan:\n");
     displayQueue(q);
-    printf("\n\n");
+    printf("\n");
 
-    // Tes length again
+    // Test length again
     printf("Panjang queue sekarang: %d\n\n", length(q));
 
-    // Tes isEmpty
+    // Test isEmpty (should be false)
     printf("Apakah queue kosong sekarang? ");
     if (isEmpty(q)) {
         printf("Ya\n");
     } else {
         printf("Tidak\n");
     }
+    printf("\n");
 
-    // Dequeue remaining barang
+    // Dequeue remaining items
     printf("Menghapus sisa barang dari queue...\n");
     while (!isEmpty(q)) {
         dequeue(&q, &barang);
-        printf("barang yang dihapus: ID=%d, Nama=%s, Harga=%d\n", barang.id, barang.nama, barang.harga);
+        printf("Barang yang dihapus: Nama=%s, Harga=%d\n", barang.name, barang.price);
     }
     printf("\n");
 
-    // Tes isEmpty
+    // Test isEmpty (should be true)
     printf("Apakah queue kosong sekarang? ");
     if (isEmpty(q)) {
         printf("Ya\n");

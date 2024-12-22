@@ -39,6 +39,9 @@ SRCS = ../src/main.c \
     ../src/COMMAND/WORK/work.c \
     ../src/COMMAND/TEBAKANGKA/tebakangka.c \
     ../src/COMMAND/WORDL3/wordl3.c \
+    ../src/COMMAND/GLOBALALIGNMENT/GLOBALALIGNMENT.c \
+    ../src/COMMAND/OPTIMASIRUTE/OPTIMASIRUTE.c \
+    ../src/COMMAND/BIOWEAPON/BIOWEAPON.c \
     ../src/asciart/asciiart.c
 
 $(TARGET): $(SRCS)

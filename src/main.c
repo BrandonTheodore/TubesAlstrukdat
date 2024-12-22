@@ -133,6 +133,9 @@ int main()
                 printf(">>> ");
                 STARTWORD2();
             }
+            else {
+                printf("Command tidak valid, silakan ulangi kembali!\n");
+            }
         } 
         else if (!login && start)
         {
@@ -150,7 +153,7 @@ int main()
             STARTWORD2();
             char command[50];
             int i = 0;
-            while(currentWord.TabWord[i] != '\0'){
+            while(currentWord.TabWord[i] != ' ' && currentWord.TabWord[i] != '\0'){
                 command[i] = currentWord.TabWord[i];
                 i++;
             }
@@ -213,6 +216,7 @@ int main()
                         } else {
                             printf("File tidak terbaca! Nama file harus berakhiran .txt\n");
                         }
+
                     } while (1);
                 }
                 printf("Aplikasi akan ditutup");
@@ -254,11 +258,13 @@ int main()
             printf("| 15. WISHLIST SHOW                                      |\n");
             printf("| 16. WISHLIST SWAP                                      |\n");
             printf("| 17. HISTORY                                            |\n");
-            printf("| 18. LOGOUT                                             |\n");
-            printf("| 19. SAVE                                               |\n");
-            printf("| 20. QUIT                                               |\n");
-            printf("| 21. HELP                                               |\n");
-            printf("==========================================================\n");
+            printf("| 18. OPTIMASIRUTE                                       |\n");
+            printf("| 19. GLOBALALIGNMENT                                    |\n");
+            printf("| 20. LOGOUT                                             |\n");
+            printf("| 21. SAVE                                               |\n");
+            printf("| 22. QUIT                                               |\n");
+            printf("| 23. HELP                                               |\n");
+            printf("=========================================================\n");
             printf(">>> ");
             STARTWORD2();
 
@@ -319,11 +325,32 @@ int main()
                 ascii_storelist();
                 STORE_LIST();
             }
-            else if(isEqual(command2, "STORE REQUEST") || isEqual(command, "4")){
+            else if(isEqual(command3, "STORE REQUEST")){
                 clear_terminal();
                 printf("\n");
                 ascii_storerequest();
                 STORE_REQUEST();
+            }
+            else if(isEqual(command2, "STORE REQUEST")){
+                clear_terminal();
+                printf("\n");
+                int index3=0;
+                char temp[100];
+                
+                while (currentWord.TabWord[index2]!='\0')
+                {
+                    temp[index3++]=currentWord.TabWord[index2++];
+                }
+                temp[index3]='\0';
+                if (isEqual(temp,"bioweapon") || isEqual(temp,"Bioweapon") || isEqual(temp,"BIOWEAPON"))
+                {
+                    ascii_bioweapon();
+                    processBioWeapon();
+                }
+                else
+                {
+                    printf("commnd tidak valid\n");
+                }               
             }
             else if(isEqual(command2, "STORE SUPPLY") || isEqual(command, "5")){
                 clear_terminal();
@@ -441,7 +468,7 @@ int main()
                 CART_PAY();
                 printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
             }
-            else if(isEqual(command2, "PROFILE") || isEqual(command, "11")){
+            else if(isEqual(command, "PROFILE") || isEqual(command, "11")){
                 clear_terminal();
                 printf("\n");
                 ascii_profile();
@@ -471,7 +498,12 @@ int main()
                 temp[index3]='\0';
                 stringtoint(temp,&i);
 
-                WISHLIST_REMOVE_1(i);
+                if (i==0){
+                    printf("Penghapusan barang WISHLIST gagal dilakukan, command tidak valid!\n");
+                }
+                else{
+                    WISHLIST_REMOVE_1(i);
+                }
             }
             else if(isEqual(command2, "WISHLIST CLEAR") || isEqual(command, "14")){
                 clear_terminal();
@@ -560,12 +592,24 @@ int main()
 
                 HISTORY(i);
             }
-            else if(isEqual(command, "LOGOUT") || isEqual(command, "18")){
+            else if(isEqual(command, "OPTIMASIRUTE") || isEqual(command, "18")){
+                clear_terminal();
+                printf("\n");
+                ascii_optimasi();
+                processRoute();
+            }
+            else if(isEqual(command, "GLOBALALIGNMENT") || isEqual(command, "19")){
+                clear_terminal();
+                printf("\n");
+                ascii_globalalignment();
+                check_leakage();
+            }
+            else if(isEqual(command, "LOGOUT") || isEqual(command, "20")){
                 clear_terminal();
                 printf("\n");
                 ascii_logout();
                 LOGOUT();
-            } else if(isEqual(command, "HELP") || isEqual(command, "21")){
+            } else if(isEqual(command, "HELP") || isEqual(command, "23")){
                 clear_terminal();
                 printf("\n");
                 HELP(start, login);
@@ -603,7 +647,7 @@ int main()
                     printf("File tidak terbaca! Nama file harus berakhiran .txt\n");
                 }
             } 
-            else if(isEqual(command, "QUIT") || isEqual(command, "20")){
+            else if(isEqual(command, "QUIT") || isEqual(command, "22")){
             clear_terminal();
             printf("\n");
             ascii_quit();

@@ -25,5 +25,8 @@ void ascii_history();
 void ascii_logout();
 void ascii_save();
 void ascii_quit();
+void ascii_bioweapon();
+void ascii_optimasi();
+void ascii_globalalignment();
 
 #endif

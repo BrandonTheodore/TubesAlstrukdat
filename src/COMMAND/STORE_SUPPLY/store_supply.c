@@ -40,7 +40,8 @@ void STORE_SUPPLY() {
             (&currentWord)->TabWord[i] = '\0';
 
             // Konversi input harga ke integer
-            int harga = atoi(price);
+            int harga;
+            stringtoint(price, &harga);
             if (harga <= 0) {
                 printf("Harga tidak valid. Balik ke menu.\n");
                 dequeue(&queue, &barang);
