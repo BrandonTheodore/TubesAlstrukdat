@@ -43,8 +43,8 @@ int main() {
     InsertLast(&myList, user);
 
     // User 3
-    strcpy(user.name, "carl");
-    strcpy(user.password, "carl123");
+    strcpy(user.name, "dar");
+    strcpy(user.password, "dar123");
     user.money = 2000;
     InsertLast(&myList, user);
 
@@ -70,10 +70,10 @@ int main() {
         printf("bob tidak ditemukan\n");
     }
 
-    if (Search(myList, "carl", &searchindeks)) {
-        printf("carl ditemukan pada index: %d\n", searchindeks);
+    if (Search(myList, "dar", &searchindeks)) {
+        printf("dar ditemukan pada index: %d\n", searchindeks);
     } else {
-        printf("carl tidak ditemukan\n");
+        printf("dar tidak ditemukan\n");
     }
 
     if (Search(myList, "john", &searchindeks)) {

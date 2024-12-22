@@ -5,20 +5,20 @@ int main() {
     // Reset initial state
     reset();
     
-    // Test START and basic character reading
-    printf("1. Test pembacaan karakter standard:\n");
+    // Tes START and basic character reading
+    printf("1. Tes pembacaan karakter standard:\n");
     printf("Masukkan kalimat (akhiri dengan titik): ");
     START();
     while (!IsEOP()) {
         printf("%c", GetCC());
         ADV();
     }
-    reset(); // Reset after test
+    reset(); // Reset after Tes
     printf("\n\n");
 
-    // Test start_files
-    printf("2. Test pembacaan file:\n");
-    start_files("test.txt");
+    // Tes start_files
+    printf("2. Tes pembacaan file:\n");
+    start_files("Tes.txt");
     printf("Isi file:\n");
     while (!IsEOP()) {
         printf("%c", GetCC());
@@ -27,25 +27,25 @@ int main() {
     reset(); // Reset after file read
     printf("\n\n");
 
-    // Test reset
-    printf("3. Test reset file pointer:\n");
-    start_files("test.txt");
+    // Tes reset
+    printf("3. Tes reset file pointer:\n");
+    start_files("Tes.txt");
     printf("Membaca file lagi setelah reset:\n");
     while (!IsEOP()) {
         printf("%c", GetCC());
         ADV();
     }
-    reset(); // Reset after test
+    reset(); // Reset after Tes
     printf("\n\n");
 
-    // Test IgnoreCRLF
-    printf("4. Test IgnoreCRLF:\n");
+    // Tes IgnoreCRLF
+    printf("4. Tes IgnoreCRLF:\n");
     printf("Masukkan text dengan enter: \n");
     START();
     IgnoreCRLF();
     printf("Karakter setelah CRLF: %c\n", GetCC());
     reset(); // Final reset
 
-    printf("\nSemua test selesai!\n");
+    printf("\nSemua Tes selesai!\n");
     return 0;
 }

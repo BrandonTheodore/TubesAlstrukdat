@@ -17,11 +17,11 @@ int main() {
     Stack S;
     infotypeStack item;
     
-    printf("1. Test CreateEmptyStack dan IsEmptyStack:\n");
+    printf("1. Tes CreateEmptyStack dan IsEmptyStack:\n");
     CreateEmptyStack(&S);
     printf("Stack kosong? %s\n\n", IsEmptyStack(S) ? "Ya" : "Tidak");
 
-    printf("2. Test PushStack:\n");
+    printf("2. Tes PushStack:\n");
     item.totalHarga = 5000;
     PushStack(&S, item);
     printf("Push item harga 5000\n");
@@ -31,7 +31,7 @@ int main() {
     printf("Push item harga 7000\n");
     printStack(S);
 
-    printf("3. Test PopStack:\n");
+    printf("3. Tes PopStack:\n");
     PopStack(&S, &item);
     printf("Item yang di-pop: %d\n", item.totalHarga);
     printStack(S);

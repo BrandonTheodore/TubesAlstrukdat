@@ -5,12 +5,12 @@ int main() {
     Queue q;
     Barang barang;
 
-    // Test CreateQueue
+    // Tes CreateQueue
     printf("Membuat queue kosong\n");
     CreateQueue(&q);
     printf("Queue berhasil dibuat\n\n");
 
-    // Test isEmpty (should be true)
+    // Tes isEmpty (should be true)
     printf("Apakah queue kosong? ");
     if (isEmpty(q)) {
         printf("Ya\n\n");
@@ -18,7 +18,7 @@ int main() {
         printf("Tidak\n\n");
     }
 
-    // Test enqueue
+    // Tes enqueue
     printf("Menambahkan beberapa barang ke dalam queue\n");
     for (int i = 1; i <= 5; i++) {
         sprintf(barang.name, "Barang%d", i);
@@ -28,15 +28,15 @@ int main() {
     }
     printf("\n");
 
-    // Test displayQueue
-    printf("Isi queue sekarang:\n");
+    // Tes displayQueue
+    printf("Isi dari queue sekarang:\n");
     displayQueue(q);
     printf("\n");
 
-    // Test length
+    // Tes length
     printf("Panjang queue: %d\n\n", length(q));
 
-    // Test isFull
+    // Tes isFull
     printf("Apakah queue penuh? ");
     if (isFull(q)) {
         printf("Ya\n\n");
@@ -44,7 +44,7 @@ int main() {
         printf("Tidak\n\n");
     }
 
-    // Test dequeue
+    // Tes dequeue
     printf("Menghapus beberapa barang dari queue...\n");
     for (int i = 0; i < 3; i++) {
         dequeue(&q, &barang);
@@ -57,10 +57,10 @@ int main() {
     displayQueue(q);
     printf("\n");
 
-    // Test length again
+    // Tes length again
     printf("Panjang queue sekarang: %d\n\n", length(q));
 
-    // Test isEmpty (should be false)
+    // Tes isEmpty (should be false)
     printf("Apakah queue kosong sekarang? ");
     if (isEmpty(q)) {
         printf("Ya\n");
@@ -77,8 +77,8 @@ int main() {
     }
     printf("\n");
 
-    // Test isEmpty (should be true)
-    printf("Apakah queue kosong sekarang? ");
+    // Tes isEmpty (should be true)
+    printf("Apakah queue kosong? ");
     if (isEmpty(q)) {
         printf("Ya\n");
     } else {

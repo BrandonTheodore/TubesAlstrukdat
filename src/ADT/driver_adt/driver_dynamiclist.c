@@ -18,7 +18,6 @@ int main() {
     ArrayDin arr = MakeArrayDin();
     
     printf("1. Tes MakeArrayDin dan IsEmptyDin:\n");
-    printf("1. Testing MakeArrayDin and IsEmptyDin:\n");
 
     if (IsEmptyDin(arr)) {
         printf("array kosong\n");

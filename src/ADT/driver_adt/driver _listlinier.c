@@ -5,13 +5,13 @@ int main() {
     Listlinier L;
     infotypelist val;
 
-    printf("1. Test CreateEmptyLinier dan IsEmptyLinier:\n");
+    printf("1. Tes CreateEmptyLinier dan IsEmptyLinier:\n");
     CreateEmptyLinier(&L);
     if (IsEmptyLinier(L)) {
-        printf("List berhasil dibuat dan kosong\n\n");
+        printf("List kosong berhasil dibuat\n\n");
     }
 
-    printf("2. Test InsVLastLinier:\n");
+    printf("2. Tes InsVLastLinier:\n");
     InsVLastLinier(&L, "AK47");
     InsVLastLinier(&L, "Shotgun");
     InsVLastLinier(&L, "Pistol");
@@ -19,13 +19,13 @@ int main() {
     PrintInfoLinier(L);
     printf("\n");
 
-    printf("3. Test InsVFirstLinier:\n");
+    printf("3. Tes InsVFirstLinier:\n");
     InsVFirstLinier(&L, "RPG");
     printf("List setelah insert di awal:\n");
     PrintInfoLinier(L);
     printf("\n");
 
-    printf("4. Test SearchLinier:\n");
+    printf("4. Tes SearchLinier:\n");
     address_list found = SearchLinier(L, "Shotgun");
     if (found != NilList) {
         printf("Shotgun ditemukan\n");
@@ -34,19 +34,19 @@ int main() {
     }
     printf("\n");
 
-    printf("5. Test DelVFirstLinier:\n");
+    printf("5. Tes DelVFirstLinier:\n");
     DelVFirstLinier(&L, &val);
     printf("Item yang dihapus: %s\n", val);
-    printf("List setelah delete:\n");
+    printf("List setelah melakukan DelVFirstLinier:\n");
     PrintInfoLinier(L);
     printf("\n");
 
-    printf("6. Test NbElmtLinier:\n");
+    printf("6. Tes NbElmtLinier:\n");
     printf("Jumlah elemen: %d\n\n", NbElmtLinier(L));
 
-    printf("7. Test InversLinier:\n");
+    printf("7. Tes InversLinier:\n");
     InversLinier(&L);
-    printf("List setelah dibalik:\n");
+    printf("List setelah dilakukan invers:\n");
     PrintInfoLinier(L);
     printf("\n");
 
