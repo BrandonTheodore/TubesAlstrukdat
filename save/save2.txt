@@ -4,7 +4,7 @@
 20 pistol
 500 Meong
 20 bola
-3
+4
 100 user1 alstrukdatkeren matt 
 18
 7
@@ -34,3 +34,7 @@ Meong
 2
 bola
 AK47
+6300 mattt mattt 
+0
+0
+0

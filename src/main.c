@@ -137,6 +137,7 @@ int main()
                 printf("Command tidak valid, silakan ulangi kembali!\n");
             }
         } 
+        
         else if (!login && start)
         {
             printf("\n");
