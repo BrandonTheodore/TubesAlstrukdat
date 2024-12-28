@@ -303,20 +303,19 @@ int main()
             index++; 
             index2++;
 
-            if (isEqual(command, "WORK") || isEqual(command, "1")) {
-                clear_terminal();
-                printf("\n");
-                ascii_work();
-                main_work();
-                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
-            }
-        
-            else if(isEqual(command2, "WORK CHALLENGE") || isEqual(command, "2")){
+            if(isEqual(command2, "WORK CHALLENGE") || isEqual(command, "2")){
                 clear_terminal();
                 printf("\n");
                 ascii_workchallenge();
                 printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
                 selectChallenge(); 
+                printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
+            }
+            else if (isEqual(command, "WORK") || isEqual(command, "1")) {
+                clear_terminal();
+                printf("\n");
+                ascii_work();
+                main_work();
                 printf("saldo anda sekarang adalah: %d rupiah\n",userList.A[user_id].money);
             }
             else if(isEqual(command2, "STORE LIST") || isEqual(command, "3")){
